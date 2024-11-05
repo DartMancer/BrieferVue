@@ -1,9 +1,9 @@
 <template>
-    <a-flex class="description" justify="space-between" align="center">
+    <a-flex class="description" justify="center" align="center">
         <div class="description__title">Описание</div>
-        <div class="description__body">Briefer — это веб-приложение на Flutter для генерации технических заданий (ТЗ).
+        <div class="description__body">Briefer — это веб-приложение для генерации технических заданий.
             Оно позволяет
-            создавать кастомные анкеты с нуля или использовать готовые шаблоны.</div>
+            создавать персонализированные анкеты с нуля или использовать готовые шаблоны.</div>
     </a-flex>
 </template>
 
@@ -20,6 +20,7 @@
     }
 
     &__body {
+        max-width: 365px;
         color: var(--white-color);
         font-size: 16px;
         font-family: 'Nunito';

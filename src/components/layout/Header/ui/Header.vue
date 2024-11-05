@@ -110,7 +110,7 @@ const isRouteActive = (path: string) => route.path === path;
 }
 
 .logo__button {
-    background-color: var(--header-background-color);
+    background-color: transparent;
     border: none;
     padding: 30px;
 }
@@ -123,7 +123,7 @@ const isRouteActive = (path: string) => route.path === path;
 }
 
 .company_info_button {
-    background-color: var(--header-background-color);
+    background-color: transparent;
     border: none;
     padding: 30px;
     color: var(--accent-color);

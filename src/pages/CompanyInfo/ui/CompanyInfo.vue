@@ -2,7 +2,8 @@
 
 import { storeToRefs } from 'pinia';
 import { useScreenStore } from '@/entities/screen';
-import { DesktopCompanyInfo, TabletCompanyInfo, MobileCompanyInfo } from '../adaptive_blocks';
+import { DesktopCompanyInfo, TabletCompanyInfo } from '../adaptive_blocks';
+import MobileVersion from "@/components/layout/MobileVersion";
 
 const screenStore = useScreenStore();
 const { platform } = storeToRefs(screenStore);
@@ -22,7 +23,7 @@ const { platform } = storeToRefs(screenStore);
             </div>
         </a-flex>
         <a-flex v-else justify="center">
-            <MobileCompanyInfo />
+            <MobileVersion />
         </a-flex>
     </a-flex>
 </template>

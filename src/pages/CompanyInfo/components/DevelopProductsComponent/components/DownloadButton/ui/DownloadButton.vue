@@ -2,13 +2,13 @@
 import AppBtn from '@/components/common/AppBtn.vue';
 import DownloadIcon from '@/assets/icons/DownloadIcon.vue';
 import { ref, onMounted } from 'vue';
-import { storage } from '@/firebase/config'; // Убедитесь, что путь к файлу правильный
+import { storage } from '@/firebase/config';
 import { ref as storageRef, getDownloadURL } from 'firebase/storage';
 
 const fileUrl = ref<string>('');
 
 const fetchFileUrl = async () => {
-    const fileRef = storageRef(storage, 'BrieferPresentation.pptx'); // Замените на путь вашего файла
+    const fileRef = storageRef(storage, 'BrieferPresentation.pptx');
     try {
         fileUrl.value = await getDownloadURL(fileRef);
     } catch (error) {
@@ -21,7 +21,7 @@ const downloadFile = () => {
     if (fileUrl.value) {
         const link = document.createElement('a');
         link.href = fileUrl.value;
-        link.download = 'BrieferPresentation.pptx'; // Название файла при сохранении
+        link.download = 'BrieferPresentation.pptx';
         link.click();
     }
 };
@@ -32,7 +32,7 @@ onMounted(fetchFileUrl);
 <template>
     <AppBtn @click="downloadFile" class="download-button">
         <DownloadIcon class="icon" />
-        Скачать
+        Презентация
     </AppBtn>
 </template>
 

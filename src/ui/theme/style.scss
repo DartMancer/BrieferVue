@@ -21,7 +21,6 @@ img {
 
 .link {
   text-decoration: none;
-  // color: var(--secondary-color) !important;
   position: relative;
 
   &::after {
@@ -92,4 +91,11 @@ img {
 
 .mb-30 {
   margin-bottom: 30px;
+}
+
+@font-face {
+  font-family: 'UEFA Playstrong';
+  src: url('@/assets/fonts/UEFAPlaystrong.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
