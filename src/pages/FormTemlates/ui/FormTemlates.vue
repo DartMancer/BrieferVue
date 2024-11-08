@@ -11,7 +11,7 @@ const { platform } = storeToRefs(screenStore);
 
 <template>
     <div>
-        <a-flex v-if="platform === 'mobile'" justify="center" align="center" class="main">
+        <a-flex v-if="platform === 'mobile'" justify="center" align="center" class="gmain">
             <MobileVersion />
         </a-flex>
         <a-flex v-else justify="center" align="center" class="test">

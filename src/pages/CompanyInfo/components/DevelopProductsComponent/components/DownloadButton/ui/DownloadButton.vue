@@ -38,11 +38,9 @@ onMounted(fetchFileUrl);
 
 <style lang="scss" scoped>
 .download-button {
-    border: solid;
-    border-width: 2px;
+    border: solid var(--accent-color) 2px;
     padding: 25px 50px;
     background-color: var(--element-color);
-    border-color: var(--accent-color);
     color: var(--accent-color);
     font-family: 'Montserrat Alternates';
     font-weight: 200;

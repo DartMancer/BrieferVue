@@ -48,13 +48,15 @@ onUnmounted(() => {
 
 <style lang="scss">
 @import url("./ui/theme/vars.scss");
-// @import url("./ui/theme/custom.scss");
+@import url("./ui/theme/custom.scss");
 @import url("./ui/theme/style.scss");
 </style>
 
 <style lang="scss" scoped>
 .main {
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 </style>
