@@ -2,6 +2,7 @@ import MainPage from '@/pages/MainPage/ui/MainPage.vue';
 import CompanyInfo from '@/pages/CompanyInfo/ui/CompanyInfo.vue';
 import FormDesigner from '@/pages/FormDesigner/ui/FormDesigner.vue';
 import FormTemlates from '@/pages/FormTemlates/ui/FormTemlates.vue';
+import BrieferPage from '@/pages/ProductsPages/BrieferPage/ui/BrieferPage.vue';
 
 export const routes: any[] = [
     {
@@ -23,6 +24,11 @@ export const routes: any[] = [
       path: "/form_templates",
       name: "form_templates",
       component: FormTemlates,
+    },
+    {
+      path: "/briefer_page",
+      name: "briefer_page",
+      component: BrieferPage,
     },
   ];
   

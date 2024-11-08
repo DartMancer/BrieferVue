@@ -16,9 +16,10 @@ const props = withDefaults(defineProps<{
 
 <style scoped lang="scss">
 .btn {
-    background-color: var(--accent-color);
+    background-color: transparent;
     padding: 12px 30px;
-    border-radius: 15px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     height: 48px;
@@ -28,12 +29,6 @@ const props = withDefaults(defineProps<{
     align-items: center;
     justify-content: center;
     gap: 15px;
-
-    :deep(img),
-    :deep(svg) {
-        min-width: 23px;
-        min-height: 23px;
-    }
 
     &:hover {
         box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.2) inset;

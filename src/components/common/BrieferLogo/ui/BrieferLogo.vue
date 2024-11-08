@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import BrieferLogoIcon from '@/assets/icons/BrieferLogoIcon.vue';
 
 const props = withDefaults(defineProps<{

@@ -3,7 +3,8 @@
 import { storeToRefs } from 'pinia';
 import { useScreenStore } from '@/entities/screen';
 import { DesktopCompanyInfo, TabletCompanyInfo } from '../adaptive_blocks';
-import MobileVersion from "@/components/layout/MobileVersion";
+import MobileVersion from "@/components/layout/MobileVersion"
+import Footer from '@/components/layout/Footer';
 
 const screenStore = useScreenStore();
 const { platform } = storeToRefs(screenStore);
@@ -26,11 +27,12 @@ const { platform } = storeToRefs(screenStore);
             <MobileVersion />
         </a-flex>
     </a-flex>
+    <Footer />
 </template>
 
 <style lang="scss" scoped>
 .main {
-    width: 80%;
+    width: 90%;
     margin: 120px 0 70px 0;
 }
 </style>

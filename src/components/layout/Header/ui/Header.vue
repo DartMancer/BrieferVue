@@ -79,9 +79,9 @@ const isRouteActive = (path: string) => route.path === path;
                         </router-link>
                     </div>
                 </a-flex>
-
             </a-flex>
         </div>
+        <!-- <a-divider /> -->
     </header>
 </template>
 
@@ -90,6 +90,7 @@ const isRouteActive = (path: string) => route.path === path;
     position: fixed;
     left: 0;
     right: 0;
+    border-bottom: solid var(--accent-color) 1px;
     background-color: var(--header-background-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
