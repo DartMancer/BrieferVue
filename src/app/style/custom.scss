@@ -1,0 +1,558 @@
+.custom-theme {
+  .ant-divider {
+    margin: 50px;
+    background-color: var(--accent-color);
+  }
+
+  //!Input
+
+  .ant-input {
+    max-height: fit-content;
+    border: solid 0.15vw var(--accent-color);
+    color: var(--white-color);
+    background-color: var(--element-color);
+    font-family: "Nunito";
+    padding: 0.7vw 1vw;
+    box-shadow: none;
+
+    &::placeholder {
+      color: var(--accent-color);
+    }
+
+    &:hover {
+      border-color: var(--hover-accent-color);
+    }
+    &:focus {
+      border-color: var(--hover-accent-color);
+      box-shadow: 0 0 1vw var(--opacity-accent-color);
+    }
+  }
+
+  .ant-input-affix-wrapper {
+    background-color: var(--element-color);
+    border: solid 2px var(--accent-color);
+    box-shadow: none;
+    padding: 0.5vw 0.7vw;
+
+    &:hover {
+      border: solid 2px var(--hover-accent-color);
+    }
+  }
+
+  .ant-input-affix-wrapper-focused {
+    border-color: var(--hover-accent-color);
+    box-shadow: 0 0 0.5vw var(--accent-color);
+  }
+
+  .ant-input-clear-icon svg {
+    fill: var(--accent-color);
+
+    &:hover {
+      fill: var(--hover-accent-color);
+    }
+  }
+
+  //!Radio
+
+  .ant-radio-wrapper {
+    width: 100%;
+    font-size: 1vw;
+    color: var(--white-color);
+    transition: 0.3s ease-in-out;
+
+    .ant-radio-inner {
+      border-color: var(--accent-color);
+      background-color: transparent;
+    }
+
+    &:hover {
+      border-color: var(--hover-accent-color);
+    }
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .ant-radio-wrapper-checked {
+    .ant-radio-inner {
+      border-color: var(--primary-color);
+
+      &::after {
+        background-color: var(--primary-color);
+      }
+    }
+  }
+
+  .ant-radio-wrapper-checked.ant-radio-wrapper-in-form-item.radio-block {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 1vw var(--hover-primary-color);
+  }
+
+  .ant-radio-button-wrapper .ant-radio-button-checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 1vw var(--primary-color);
+    transition: 0.3s ease-in-out;
+  }
+
+  //!Select
+
+  .ant-select {
+    .ant-select-selector {
+      border: solid 0.15vw var(--accent-color);
+      padding: 0.3vw 1vw;
+      background-color: var(--opacity-element-color);
+    }
+  }
+
+  .ant-select-dropdown {
+    backdrop-filter: blur(6px);
+    background-color: var(--opacity-element-color);
+    border: solid 0.1vw var(--accent-color);
+    .ant-select-item-option:hover,
+    .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+      background-color: var(--accent-color);
+    }
+  }
+
+  .ant-dropdown {
+    backdrop-filter: blur(6px);
+    .ant-dropdown-menu {
+      border: solid 0.1vw var(--accent-color);
+      background-color: var(--opacity-element-color);
+
+      .ant-dropdown-menu-item:hover {
+        box-shadow: 0 0 0.3vw black;
+        background-color: var(--accent-color);
+      }
+
+      .ant-dropdown-menu-title-content {
+        color: var(--white-color);
+      }
+    }
+  }
+  .ant-dropdown-trigger:hover {
+    color: var(--white-color);
+    border-color: var(--hover-accent-color);
+  }
+  .ant-dropdown-open,
+  .ant-dropdown-trigger:focus,
+  .ant-dropdown-trigger:active {
+    color: var(--white-color);
+    border-color: var(--hover-accent-color);
+    box-shadow: 0 0 0.5vw var(--hover-accent-color);
+  }
+
+  .ant-popover-inner {
+    background-color: var(--accent-color);
+  }
+
+  .ant-picker,
+  .ant-picker-range {
+    width: 100%;
+    background: var(--element-color);
+    padding: 0.5vw 1vw;
+    border: solid 0.15vw var(--accent-color);
+
+    .ant-picker-input input {
+      color: var(--white-color);
+    }
+
+    .ant-picker-input input::placeholder {
+      color: var(--accent-color);
+    }
+
+    .ant-picker-range-separator svg {
+      fill: var(--accent-color);
+    }
+
+    .ant-picker-suffix svg {
+      fill: var(--accent-color);
+    }
+
+    .ant-picker-clear svg {
+      fill: var(--hover-accent-color);
+      background: var(--element-color);
+    }
+
+    .ant-picker-active-bar {
+      background: var(--accent-color);
+    }
+
+    &:hover {
+      border-color: var(--hover-accent-color);
+    }
+  }
+  .ant-picker-focused {
+    border-color: var(--hover-accent-color);
+    box-shadow: 0 0 0.5vw var(--accent-color);
+  }
+
+  .ant-picker-disabled {
+    background: var(--element-color);
+    opacity: 0.5;
+  }
+  .ant-picker-dropdown {
+    .ant-picker-header-view {
+      color: var(--element-color);
+    }
+
+    .ant-picker-panels {
+      background-color: var(--accent-color);
+    }
+
+    .ant-picker-body {
+      & th {
+        color: var(--element-color);
+      }
+    }
+
+    .ant-picker-cell {
+      .ant-picker-cell-inner {
+        color: var(--background-color);
+      }
+
+      .ant-picker-cell-end {
+        background-color: var(--hover-element-color);
+      }
+
+      .ant-picker-cell-in-view {
+        background-color: var(--accent-color);
+      }
+    }
+
+    .ant-picker-range-arrow {
+      display: none;
+    }
+    .ant-picker-cell-in-view {
+      color: var(--element-color);
+    }
+
+    .ant-picker-cell-in-view.ant-picker-cell-range-start {
+      .ant-picker-cell-inner {
+        color: white;
+        background: var(--primary-color);
+      }
+
+      &:not(.ant-picker-cell-range-start-single)::before {
+        background: var(--opacity-primary-color);
+      }
+    }
+
+    .ant-picker-cell-in-view.ant-picker-cell-range-end {
+      .ant-picker-cell-inner {
+        color: white;
+        background: var(--primary-color);
+      }
+
+      &:not(.ant-picker-cell-range-end-single)::before {
+        background: var(--opacity-primary-color);
+      }
+    }
+
+    .ant-picker-cell-in-range::before {
+      color: var(--white-color);
+      background: var(--opacity-primary-color);
+    }
+
+    .ant-picker-cell-in-range::after {
+      color: var(--white-color);
+      background: var(--opacity-primary-color);
+    }
+
+    .ant-picker-cell-today .ant-picker-cell-inner::before {
+      border: 1px solid var(--hover-primary-color);
+    }
+
+    .ant-picker-cell-in-view.ant-picker-cell-range-hover-start,
+    .ant-picker-cell-in-view.ant-picker-cell-range-hover-end {
+      background: var(--primary-color);
+      background-color: transparent !important;
+    }
+    .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover::before {
+      background: var(--opacity-primary-color);
+    }
+    .ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover::before {
+      background: var(--opacity-primary-color);
+    }
+    .ant-picker-cell::after {
+      border-color: var(--hover-primary-color) !important;
+    }
+
+    .ant-picker-date-panel {
+      .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start,
+      .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-end {
+        .ant-picker-cell-inner::after {
+          background: var(--opacity-primary-color);
+        }
+      }
+    }
+
+    .ant-picker-today-btn {
+      color: var(--element-color);
+    }
+  }
+
+  .ant-picker-panel {
+    .ant-picker-date-panel {
+      background: var(--accent-color);
+    }
+    .ant-picker-footer {
+      background: var(--accent-color);
+    }
+  }
+
+  .ant-picker-cell-in-view.ant-picker-cell-selected {
+    .ant-picker-cell-inner {
+      color: white;
+      background: var(--primary-color);
+    }
+  }
+
+  .ant-picker-status-error.ant-picker:not([disabled]):hover {
+    background-color: var(--element-color);
+  }
+
+  .ant-input-number {
+    width: 100%;
+    border: solid 0.15vw var(--accent-color);
+    border-radius: 0.5vw;
+    background-color: var(--element-color);
+
+    .ant-input-number-input {
+      color: var(--white-color);
+
+      &::placeholder {
+        color: var(--accent-color);
+      }
+    }
+    .ant-input-number-handler-wrap {
+      width: 1.5vw;
+      background: transparent;
+
+      & svg {
+        fill: var(--accent-color);
+      }
+    }
+
+    .ant-input-number-handler {
+      border-inline-start: 1px solid var(--accent-color);
+    }
+
+    .ant-input-number-handler-down {
+      border-block-start: 1px solid var(--accent-color);
+    }
+
+    &:hover .ant-input-number-handler,
+    &:hover .ant-input-number-handler-down,
+    &:hover {
+      border-color: var(--hover-accent-color);
+    }
+  }
+
+  .ant-input-number-focused {
+    border-color: var(--hover-accent-color);
+    box-shadow: 0 0 0.5vw var(--accent-color);
+
+    .ant-input-number-handler {
+      border-inline-start: 1px solid var(--hovera-accent-color);
+    }
+
+    .ant-input-number-handler-down {
+      border-block-start: 1px solid var(--hover-accent-color);
+    }
+  }
+
+  .ant-input-group-addon {
+    background-color: var(--hover-element-color);
+    .ant-select-selection-item {
+      color: var(--white-color);
+    }
+    .ant-select-arrow {
+      color: var(--white-color);
+    }
+  }
+
+  .ant-upload-list-item-undefined {
+    .ant-upload-text-icon svg {
+      fill: var(--white-color);
+    }
+
+    .ant-upload-list-item-name {
+      color: var(--white-color);
+    }
+
+    .ant-upload-list-item-actions svg {
+      fill: var(--error-color);
+    }
+  }
+
+  .color-picker {
+    border-radius: 1vw;
+    padding: 0.7vw;
+    background-color: var(--element-color);
+
+    .v-sheet {
+      border-radius: 1vw;
+      box-shadow: none;
+      background-color: var(--element-color);
+    }
+
+    .v-color-picker-edit__input {
+      & input {
+        height: 3vw;
+        color: var(--white-color);
+        border: 2px solid var(--accent-color);
+        border-radius: 1vw;
+        font-size: 1.3vw;
+        background-color: transparent;
+        font-family: "Montserrat Alternates";
+      }
+
+      & span {
+        color: var(--white-color);
+        font-size: 1vw;
+        margin: 0;
+        font-family: "Montserrat Alternates";
+      }
+    }
+
+    .v-color-picker-canvas {
+      border-radius: 1vw;
+    }
+
+    .v-color-picker-preview__eye-dropper,
+    .v-color-picker-preview__dot,
+    .v-slider-thumb__ripple {
+      display: none;
+    }
+
+    .v-color-picker-preview__sliders {
+      padding: 0;
+    }
+
+    .v-slider-thumb__surface {
+      width: 1.3vw;
+      height: 1.3vw;
+      background-color: var(--element-color);
+      border: 1px solid var(--accent-color);
+
+      &:active {
+        background-color: var(--accent-color);
+        border: 0.1vw solid var(--element-color);
+        transition: 0.4s ease;
+      }
+    }
+  }
+
+  //!Modal
+
+  .custom-modal-setting {
+    margin: 5vw;
+    .ant-modal-header {
+      background-color: var(--element-color);
+    }
+    .ant-modal-content {
+      background-color: var(--element-color);
+    }
+    .ant-modal-body {
+      background-color: var(--element-color);
+    }
+  }
+
+  .custom-modal-preview {
+    margin: 5vw;
+    backdrop-filter: blur(7px);
+    .ant-modal-content {
+      background-color: var(--opacity-background-color);
+      box-shadow: 0 0 0.5vw var(--opacity-accent-color);
+      border-radius: 2vw;
+    }
+  }
+
+  .ant-modal {
+    .ant-modal-content {
+      border-radius: 0.8vw;
+    }
+
+    .ant-modal-close {
+      color: var(--accent-color);
+    }
+
+    .ant-modal-title {
+      background-color: var(--element-color);
+      margin-bottom: 0.5vw;
+      padding-right: 0.8vw;
+      padding-bottom: 0.8vw;
+
+      & .custom-modal {
+        & p {
+          font-size: 1.5vw;
+          margin-bottom: 0.3vw;
+          font-weight: bold;
+          color: var(--white-color);
+          font-family: "Montserrat Alternates";
+        }
+        & .custom-modal-name {
+          margin: 0;
+          font-size: 0.8vw;
+          color: var(--accent-color);
+          font-family: "Montserrat Alternates";
+          font-weight: 400;
+        }
+
+        & .custom-modal-icon {
+          max-width: 1.3vw;
+          max-height: 1.3vw;
+          fill: var(--accent-color);
+          stroke: var(--accent-color);
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .ant-modal-body {
+      font-size: 13px;
+      padding-bottom: 15px;
+    }
+
+    .ant-modal-footer {
+      .ant-btn-primary {
+        color: var(--white-color);
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+        box-shadow: none;
+      }
+
+      .ant-btn-primary:hover {
+        border-color: var(--hover-primary-color);
+        background: var(--hover-primary-color);
+      }
+
+      .ant-btn-default {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+        background-color: transparent;
+      }
+
+      .ant-btn-default:hover {
+        color: var(--hover-accent-color);
+        border-color: var(--hover-accent-color);
+        background-color: transparent;
+      }
+    }
+
+    .error-message {
+      color: var(--error-color);
+      margin: 0;
+      margin-top: 0.5vw;
+      font-size: 0.9vw;
+    }
+  }
+  .ant-modal[aria-hidden="true"] {
+    pointer-events: none;
+  }
+
+  .ant-form-item-control-input {
+    margin-bottom: 0.8vw;
+  }
+}

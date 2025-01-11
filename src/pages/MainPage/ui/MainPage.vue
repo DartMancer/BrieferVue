@@ -1,41 +1,51 @@
 <script lang="ts" setup>
-
-import { storeToRefs } from 'pinia';
-import { useScreenStore } from '@/entities/screen';
-import BriferGradientTitle from '@/components/common/BriferGradientTitle';
-import MobileVersion from "@/components/layout/MobileVersion";
-
-const screenStore = useScreenStore();
-const { platform } = storeToRefs(screenStore);
-
+// import { storeToRefs } from "pinia";
+// import { useScreenStore } from "@/entities/screen";
+import { BrieferGradientTitle } from "@/shared/ui";
+import { MainSection } from "@/widgets";
+// import MobileVersion from "@/app/layouts/MobileVersion.vue";
+// const screenStore = useScreenStore();
+// const { platform } = storeToRefs(screenStore);
 </script>
 
-
 <template>
-    <div>
-        <a-flex v-if="platform !== 'mobile'" justify="center" align="center" class="main-page">
-            <BriferGradientTitle :font-size="'15vw'" />
-        </a-flex>
-        <a-flex v-else justify="center" align="center" class="main-page">
-            <MobileVersion />
-        </a-flex>
-    </div>
+  <a-flex vertical>
+    <!-- <BrieferGradientTitle :font-size="'15vw'" /> -->
+    <a-flex class="body-section" vertical>
+      <a-flex class="main-section" vertical>
+        <MainSection />
+      </a-flex>
+      <a-flex class="how-it-work-section" vertical> </a-flex>
+      <a-flex class="usefull-section" vertical> </a-flex>
+      <a-flex class="advantage-section" vertical> </a-flex>
+      <a-flex class="cost-section" vertical> </a-flex>
+    </a-flex>
+  </a-flex>
 </template>
 
 <style lang="scss" scoped>
-.main-page {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    color: var(--white-color);
-}
+.body-section {
+  gap: 6.25vw;
 
-@media (max-width: 1208px) {
-    .main-page {
-        height: 100vh;
-        display: flex;
-        flex-direction: row;
-        color: var(--white-color);
-    }
+  .main-section {
+    padding-left: 1.95vw 0;
+    gap: 6.25vw;
+  }
+
+  .how-it-work-section {
+    gap: 6.25vw;
+  }
+
+  .usefull-section {
+    gap: 6.25vw;
+  }
+
+  .advantage-section {
+    gap: 6.25vw;
+  }
+
+  .cost-section {
+    gap: 6.25vw;
+  }
 }
 </style>

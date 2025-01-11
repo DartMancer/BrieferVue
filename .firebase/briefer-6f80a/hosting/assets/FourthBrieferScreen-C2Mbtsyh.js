@@ -1,0 +1,1 @@
+const e="/assets/FirstBrieferScreen-DTIOlQm5.webp",r="/assets/SecondBrieferScreen-Ccdlvn29.webp",s="/assets/ThirdBrieferScreen-B5bnVk2D.webp",n="/assets/FourthBrieferScreen-DQ8Ftdsf.webp";export{e as F,r as S,s as T,n as a};

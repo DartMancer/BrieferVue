@@ -1,1 +1,2 @@
-export { useScreenStore, type Platform } from './model';
+export * from "./store";
+export * from "./types";

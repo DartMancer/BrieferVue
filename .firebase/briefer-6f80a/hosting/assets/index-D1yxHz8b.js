@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{e as s,g as a,w as r,b as n,o as c,i as l}from"./index-QemWohX6.js";const _={};function m(d,e){const t=n("a-flex");return c(),s("div",null,[a(t,{class:"test"},{default:r(()=>e[0]||(e[0]=[l(" Form Templates ")])),_:1})])}const i=o(_,[["render",m],["__scopeId","data-v-8625dde3"]]);export{i as default};

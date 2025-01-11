@@ -25,6 +25,12 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/firebase/config.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/firebase/config.ts",
+    "vite-env.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

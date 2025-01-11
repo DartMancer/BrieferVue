@@ -1,0 +1,61 @@
+:root {
+  --primary-color: #cf4d9c;
+  --opacity-primary-color: #cf4d9c80;
+  --hover-primary-color: #922065;
+  --background-color: #000214;
+  --opacity-background-color: #00021490;
+  --header-background-color: #000214cc;
+  --element-color: #3a3e62;
+  --hover-element-color: #23274c;
+  --accent-color: #959bcd;
+  --opacity-accent-color: #959bcdaa;
+  --hover-accent-color: #6f76ad;
+  --white-color: #ffffff;
+  --error-color: #ff7c7c;
+  --success-color: #c0ff8f;
+
+  --bright-turquoise-clr: #17ead9;
+  --cornflower-clr: #6078ea;
+  --cornflower-blue-clr: #6094ea;
+  --neon-pink-clr: #f02fc2;
+  --dusty-orange-clr: #f17b41;
+  --raspberry-pink-clr: #e05ba2;
+  --periwinkle-blue-clr: #879af2;
+  --vivid-cerise-clr: #d3208b;
+  --orange-peel-clr: #fda000;
+  --light-carmine-pink-clr: #ea5a6f;
+  --meteor-clr: #de791e;
+  --sunglow-clr: #fccf3a;
+
+  --blue-gradient: linear-gradient(
+    to bottom right,
+    var(--bright-turquoise-clr),
+    var(--cornflower-clr)
+  );
+  --purple-gradient: linear-gradient(
+    to bottom right,
+    var(--cornflower-blue-clr),
+    var(--neon-pink-clr)
+  );
+  --pink-gradient: linear-gradient(
+    to bottom right,
+    var(--dusty-orange-clr),
+    var(--raspberry-pink-clr),
+    var(--cornflower-clr)
+  );
+  --bright-pink-gradient: linear-gradient(
+    to bottom right,
+    var(--periwinkle-blue-clr),
+    var(--vivid-cerise-clr),
+    var(--orange-peel-clr)
+  );
+  --orange-gradient: linear-gradient(
+    to bottom right,
+    var(--light-carmine-pink-clr),
+    var(--meteor-clr),
+    var(--sunglow-clr)
+  );
+
+  --shadow-input: 0 0 0.5vw var(--accent-color);
+  --shadow-primary-button: 0 0 0.5vw var(--primary-color);
+}

@@ -9,24 +9,39 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@splinetool/runtime": "^1.9.48",
     "ant-design-vue": "^4.2.5",
     "axios": "^1.7.7",
+    "chroma-js": "^3.1.2",
     "dayjs": "^1.11.13",
     "firebase": "^11.0.1",
+    "imask": "^7.6.1",
     "lodash": "^4.17.21",
     "pinia": "^2.2.4",
+    "uuid": "^11.0.3",
     "vue": "^3.5.12",
+    "vue-color-kit": "^1.0.6",
+    "vue-input-mask": "^0.0.11",
     "vue-router": "^4.4.5",
-    "vue3-mq": "^4.0.0"
+    "vue-the-mask": "^0.11.1",
+    "vue3-colorpicker": "^2.3.0",
+    "vue3-mq": "^4.0.0",
+    "vuedraggable": "^4.1.0",
+    "vuetify": "^3.7.4"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.4.4",
     "@types/lodash": "^4.17.13",
     "@types/node": "^22.8.0",
     "@types/vue": "^2.0.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "sass": "^1.80.4",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "~5.6.2",
     "vite": "^5.4.9",
+    "vite-plugin-vue-devtools": "^7.6.8",
     "vue-tsc": "^2.1.6"
   }
 }
