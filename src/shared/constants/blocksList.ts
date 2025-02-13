@@ -1,6 +1,12 @@
 import { ref } from "vue";
 import { v4 as uuidv4 } from "uuid";
 import { GlobalTexts as t } from "@/app/locale/ru";
+// import {
+//   BlockSettings,
+//   ListVariablesType,
+//   FileType,
+//   DatePickerType,
+// } from "@/entities/form/types/BlockBase";
 import {
   BlockSettings,
   GeneralSettingsType,

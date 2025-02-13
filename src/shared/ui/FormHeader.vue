@@ -11,7 +11,7 @@ const store = useFormStore();
     <span>Страница 1</span>
     <Transition name="fade" mode="out-in">
       <TextBtn class="error-btn" @click="store.removeBlocks">
-        <span>Очистить форму</span>
+        <span class="error-text">Очистить форму</span>
         <TrashIcon />
       </TextBtn>
     </Transition>
@@ -21,11 +21,12 @@ const store = useFormStore();
 <style lang="scss" scoped>
 .editor-header {
   width: 100%;
-  border-top-left-radius: 1vw;
-  border-top-right-radius: 1vw;
-  padding: 0.8vw 1.2vw;
-  border: solid 0.15vw var(--accent-color);
-  font-size: 0.8vw;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 16px 24px;
+  border: solid 3px var(--accent-color);
+  border-bottom: none;
+  font-size: 15px;
 
   &.empty .error-btn {
     opacity: 0;
@@ -34,12 +35,13 @@ const store = useFormStore();
 
 .error-btn {
   span {
+    font-size: 15px;
     color: var(--error-color);
   }
 
   svg {
-    max-width: 1vw;
-    max-height: 1vw;
+    max-width: 20px;
+    max-height: 20px;
     fill: var(--error-color);
   }
 }

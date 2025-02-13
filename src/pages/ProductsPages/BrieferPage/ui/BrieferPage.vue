@@ -80,4 +80,8 @@ const productDetails = [
     margin-bottom: 3.5vw;
   }
 }
+
+:deep(.ant-divider) {
+  margin: 50px;
+}
 </style>

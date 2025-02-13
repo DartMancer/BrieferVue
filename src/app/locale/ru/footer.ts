@@ -10,4 +10,9 @@ export const TextsFooter = {
   innFirst: "ИНН: ",
   innSecond: "6161151700",
   copyrigth: "© 2024 ООО «БРИФЕР»",
+  instagramLink: "https://www.instagram.com/it_briefer/",
+  telegramLink: "https://t.me/dartmancer",
+  whatsAppLink: "https://wa.me/79934479141",
+  mailLink: "mailto:brieferApp@yandex.ru",
+  phoneLink: "tel:+79934479141",
 };

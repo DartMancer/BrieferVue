@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { useFormStore } from "@/entities/form/stores/useFormStore";
-import { ref, computed } from "vue";
+// import { useFormStore } from "@/entities/form";
+import { ref } from "vue";
 import { BlockSettings } from "@/entities/form";
-import { inputRequiredRule } from "@/shared/model";
+// import { inputRequiredRule } from "@/shared/model";
 
-const props = defineProps<{
+defineProps<{
   formBlock: BlockSettings;
   index: number;
 }>();
 
-const previewFormState = defineModel<Record<string, any>>("previewFormState");
+// const previewFormState = defineModel<Record<string, any>>("previewFormState");
 
-const key = Object.keys(previewFormState.value!)[props.index];
-const rules = inputRequiredRule(props.formBlock);
+// const key = Object.keys(previewFormState.value!)[props.index];
+// const rules = inputRequiredRule(props.formBlock);
 
 // const formBlocks = computed(() => store.formBlocks);
 // const formBlock = ref(formBlocks.value[props.index]);

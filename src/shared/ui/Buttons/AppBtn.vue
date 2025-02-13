@@ -18,12 +18,9 @@ const props = withDefaults(
 <style scoped lang="scss">
 .btn {
   background-color: transparent;
-  padding: 0.6vw 1.5vw;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 0.8vw;
-  height: 2.5vw;
   font-weight: 600;
   transition: box-shadow 0.3s;
   display: inline-flex;

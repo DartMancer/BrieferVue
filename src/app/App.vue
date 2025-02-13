@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { computed, defineAsyncComponent, ref } from "vue";
-import { useRoute } from "vue-router";
+import { onMounted, onUnmounted, ref } from "vue";
 import ruRU from "ant-design-vue/es/locale/ru_RU";
 import "dayjs/locale/ru";
+import { useLayout } from "./layouts";
+import { useScreenStore } from "@/app/providers";
 
-const route = useRoute();
+const screenStore = useScreenStore();
+const { layout } = useLayout();
+
 const theme = ref({
   token: {
     colorPrimary: "#cf4d9c",
     colorPrimaryHover: "#6f76ad;",
     colorSuccess: "#c0ff8f",
     colorError: "#ff7c7c",
-    // fontSize: 16,/
   },
   components: {
     Radio: {
@@ -28,14 +30,17 @@ const theme = ref({
   },
 });
 
-const layouts = {
-  //   auth: defineAsyncComponent(() => import("./layouts/AuthLayout.vue")),
-  main: defineAsyncComponent(() => import("./layouts/MainLayout.vue")),
+const updatePlatform = () => {
+  screenStore.setPlatform(window.innerWidth);
 };
 
-const layout = computed(() => {
-  const layoutName = route.meta.layout as keyof typeof layouts;
-  return layouts[layoutName] ?? layouts.main;
+onMounted(() => {
+  updatePlatform();
+  window.addEventListener("resize", updatePlatform);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updatePlatform);
 });
 </script>
 
@@ -54,8 +59,6 @@ const layout = computed(() => {
     </v-app>
   </a-config-provider>
 </template>
-<!-- <div :key="route.name">
-</div> -->
 
 <style lang="scss">
 @import url("./style/custom.scss");

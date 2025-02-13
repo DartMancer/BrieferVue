@@ -1,6 +1,6 @@
 .custom-theme {
   .ant-divider {
-    margin: 50px;
+    margin: 0;
     background-color: var(--accent-color);
   }
 
@@ -142,8 +142,17 @@
     box-shadow: 0 0 0.5vw var(--hover-accent-color);
   }
 
-  .ant-popover-inner {
-    background-color: var(--accent-color);
+  .ant-popover-content {
+    border-radius: 10px;
+
+    .ant-popover-arrow:before {
+      background: var(--element-color);
+    }
+
+    .ant-popover-inner {
+      max-width: 500px;
+      background-color: var(--element-color);
+    }
   }
 
   .ant-picker,
@@ -554,5 +563,20 @@
 
   .ant-form-item-control-input {
     margin-bottom: 0.8vw;
+  }
+
+  //!Drawer
+  .header-drawer {
+    .ant-drawer-header {
+      background-color: var(--background-color);
+
+      .ant-drawer-title {
+        color: white;
+      }
+    }
+
+    .ant-drawer-body {
+      background-color: var(--background-color);
+    }
   }
 }

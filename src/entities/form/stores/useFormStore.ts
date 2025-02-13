@@ -53,16 +53,9 @@ export const useFormStore = defineStore("formDesigner", () => {
 
   const saveTempBlock = (index: number) => {
     if (tempBlock.value) {
-      formBlocks.value[index] = { ...tempBlock.value }; // Полностью заменяем блок
+      formBlocks.value[index] = { ...tempBlock.value };
       clearTempBlock();
     }
-    // if (tempBlock.value) {
-    //   const mainBlock = formBlocks.value[index];
-    //   if (mainBlock) {
-    //     formBlocks.value[index] = { ...mainBlock, ...tempBlock.value };
-    //   }
-    //   clearTempBlock();
-    // }
   };
 
   const clearTempBlock = () => {

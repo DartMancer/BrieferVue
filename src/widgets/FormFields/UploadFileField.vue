@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { message, UploadFile } from "ant-design-vue";
+import { ref } from "vue";
+import { UploadFile } from "ant-design-vue";
 import { AppBtn } from "@/shared/ui";
 import UploadIcon from "@/assets/icons/UploadIcon.vue";
-import TrashIcon from "@/assets/icons/TrashIcon.vue";
-import { useFormStore, BlockSettings } from "@/entities/form";
+import { BlockSettings } from "@/entities/form";
 
 const props = defineProps<{
   formBlock: BlockSettings;
@@ -19,9 +18,9 @@ const key = Object.keys(previewFormState.value!)[props.index];
 
 const fileList = ref<UploadFile[]>([]);
 const maxFiles = ref<number>(props.formBlock.fileModel?.maxFiles ?? 20);
-const maxSize = ref<number>(props.formBlock.fileModel?.maxSize ?? 20);
-const maxSizeBytes = maxSize.value * 1024 * 1024;
-const sizeCounter = ref<number>(0);
+// const maxSize = ref<number>(props.formBlock.fileModel?.maxSize ?? 20);
+// const maxSizeBytes = maxSize.value * 1024 * 1024;
+// const sizeCounter = ref<number>(0);
 
 // const handleFileChange = (event: Event) => {
 //   const input = event.target as HTMLInputElement;
@@ -125,7 +124,6 @@ const onChange = () => {
   &__icon {
     width: 1vw;
     height: 1vw;
-    fill: var(--white-color);
   }
 
   &__title {
