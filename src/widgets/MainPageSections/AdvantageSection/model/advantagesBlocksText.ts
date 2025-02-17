@@ -7,62 +7,83 @@ export const advantagesBlocks = <AdvantagesBlocksType[][]>[
   [
     {
       content: [
-        { text: GlobalTexts.main.endlessCallsFirst, className: className },
-        { text: GlobalTexts.main.endlessCallsSecond },
+        {
+          text: GlobalTexts.pages.main.endlessCallsFirst,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.endlessCallsSecond },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.main.readyTemplateFirst, className: className },
-        { text: GlobalTexts.main.readyTemplateSecond },
+        {
+          text: GlobalTexts.pages.main.readyTemplateFirst,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.readyTemplateSecond },
       ],
     },
   ],
   [
     {
       content: [
-        { text: GlobalTexts.main.createDocumentFirst },
-        { text: GlobalTexts.main.createDocumentSecond, className: className },
+        { text: GlobalTexts.pages.main.createDocumentFirst },
+        {
+          text: GlobalTexts.pages.main.createDocumentSecond,
+          className: className,
+        },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.main.generateDocumentFirst, className: className },
-        { text: GlobalTexts.main.generateDocumentSecond },
+        {
+          text: GlobalTexts.pages.main.generateDocumentFirst,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.generateDocumentSecond },
       ],
     },
   ],
   [
     {
       content: [
-        { text: GlobalTexts.main.beautifullSiteFirst },
-        { text: GlobalTexts.main.beautifullSiteSecond, className: className },
+        { text: GlobalTexts.pages.main.beautifullSiteFirst },
+        {
+          text: GlobalTexts.pages.main.beautifullSiteSecond,
+          className: className,
+        },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.main.clientChooseFirst },
-        { text: GlobalTexts.main.clientChooseSecond, className: className },
-        { text: GlobalTexts.main.clientChooseThird },
+        { text: GlobalTexts.pages.main.clientChooseFirst },
+        {
+          text: GlobalTexts.pages.main.clientChooseSecond,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.clientChooseThird },
       ],
     },
   ],
   [
     {
       content: [
-        { text: GlobalTexts.main.customersLossFirst, className: className },
-        { text: GlobalTexts.main.customersLossSecond },
+        {
+          text: GlobalTexts.pages.main.customersLossFirst,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.customersLossSecond },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.main.newRequestFirst },
-        { text: GlobalTexts.main.newRequestSecond, className: className },
-        { text: GlobalTexts.main.newRequestThird },
+        { text: GlobalTexts.pages.main.newRequestFirst },
+        { text: GlobalTexts.pages.main.newRequestSecond, className: className },
+        { text: GlobalTexts.pages.main.newRequestThird },
       ],
     },
   ],

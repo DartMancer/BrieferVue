@@ -1,43 +1,48 @@
 import GlobalTexts from "@/app/locale";
-import InstagramIcon from "@/assets/icons/InstagramIcon.vue";
-import MailIcon from "@/assets/icons/MailIcon.vue";
-import PhoneIcon from "@/assets/icons/PhoneIcon.vue";
-import TelegramIcon from "@/assets/icons/TelegramIcon.vue";
-import WhatsAppIcon from "@/assets/icons/WhatsAppIcon.vue";
+import InstagramIcon from "@/assets/icons/Contacts/InstagramIcon.vue";
+import MailIcon from "@/assets/icons/Contacts/MailIcon.vue";
+import PhoneIcon from "@/assets/icons/Contacts/PhoneIcon.vue";
+import TelegramIcon from "@/assets/icons/Contacts/TelegramIcon.vue";
+import WhatsAppIcon from "@/assets/icons/Contacts/WhatsAppIcon.vue";
 
-export const footerItems = [
+export const FOOTER_ITEMS = [
   {
-    title: GlobalTexts.footer.letsStart,
+    title: GlobalTexts.components.footer.letsStart,
     items: [
-      { title: GlobalTexts.footer.create, route: "/form_designer" },
-      { title: GlobalTexts.footer.chooseTemplate, route: "/form_templates" },
+      { title: GlobalTexts.components.footer.create, route: "/form_designer" },
+      {
+        title: GlobalTexts.components.footer.chooseTemplate,
+        route: "/form_templates",
+      },
     ],
   },
   {
-    title: GlobalTexts.footer.aboutUs,
-    items: [{ title: GlobalTexts.footer.products, route: "/company_info" }],
+    title: GlobalTexts.components.footer.aboutUs,
+    items: [
+      { title: GlobalTexts.components.footer.products, route: "/company_info" },
+    ],
   },
 ];
 
 export const footerContactItems = [
   {
     icon: InstagramIcon,
-    link: GlobalTexts.footer.instagramLink,
+    link: GlobalTexts.components.footer.instagramLink,
   },
   {
     icon: TelegramIcon,
-    link: GlobalTexts.footer.telegramLink,
+    link: GlobalTexts.components.footer.telegramLink,
   },
   {
     icon: WhatsAppIcon,
-    link: GlobalTexts.footer.whatsAppLink,
+    link: GlobalTexts.components.footer.whatsAppLink,
   },
   {
     icon: MailIcon,
-    link: GlobalTexts.footer.mailLink,
+    link: GlobalTexts.components.footer.mailLink,
   },
   {
     icon: PhoneIcon,
-    link: GlobalTexts.footer.phoneLink,
+    link: GlobalTexts.components.footer.phoneLink,
   },
 ];

@@ -5,7 +5,7 @@ import UsefullItems from "./UsefullItems.vue";
 
 <template>
   <a-flex justify="center">
-    <SectionTitle :title="$t.main.usefullTitle" />
+    <SectionTitle :title="$t.pages.main.usefullTitle" />
   </a-flex>
 
   <a-flex class="items" vertical>

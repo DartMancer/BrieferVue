@@ -1,7 +1,10 @@
-import { defineStore } from "pinia";
 import { ref, watch, nextTick } from "vue";
+
+import { defineStore } from "pinia";
 import { v4 as uuidv4 } from "uuid";
-import { BlockSettings } from "../types";
+
+import { BLOCKS_LIST } from "@/shared/constants";
+import { BlockSettings, BlockType } from "../types";
 
 export const useFormStore = defineStore("formDesigner", () => {
   const formBlocks = ref<BlockSettings[]>([]);
@@ -19,12 +22,16 @@ export const useFormStore = defineStore("formDesigner", () => {
     draggedBlock.value = block;
   };
 
-  const addBlock = (block: BlockSettings) => {
-    const clonedBlock = { ...block, id: uuidv4() };
-    formBlocks.value.push(clonedBlock);
+  const addBlock = (type: BlockType) => {
+    const block = BLOCKS_LIST.value.find((block) => block.type === type);
+    if (block) {
+      formBlocks.value.push({ ...block, id: uuidv4() });
+    }
 
     nextTick(() => {
-      const lastBlock = document.querySelector(".block-item:last-child");
+      const lastBlock = document.querySelector(".last-form-block");
+      console.log(lastBlock);
+
       if (lastBlock) {
         lastBlock.scrollIntoView({
           behavior: "smooth",

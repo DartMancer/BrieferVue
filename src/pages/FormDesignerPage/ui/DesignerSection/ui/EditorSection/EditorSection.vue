@@ -1,14 +1,16 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { storeToRefs } from "pinia";
 import Draggable from "vuedraggable";
+
+import { storeToRefs } from "pinia";
+
 import { FormFooter, FormHeader } from "@/shared/ui";
 import { useFormStore } from "@/entities/form";
 import EmptyEditor from "./EmptyEditor.vue";
 import BlockItem from "./BlockItem.vue";
 
 const { formBlocks } = storeToRefs(useFormStore());
-const { setDraggedBlock, removeBlock, addBlock } = useFormStore();
+const { setDraggedBlock } = useFormStore();
 
 const dragOptions = computed(() => ({
   animation: 200,
@@ -40,12 +42,14 @@ const dragOptions = computed(() => ({
           :handle="'.drag-zone'"
         >
           <template #item="{ element, index }">
-            <div :key="index">
+            <div :key="element.id">
               <BlockItem
-                :element="{ ...element }"
+                :class="[
+                  'form-block',
+                  { 'last-form-block': index === formBlocks.length - 1 },
+                ]"
+                :block="element"
                 :index="index"
-                @remove="removeBlock"
-                @duplicate="addBlock"
               />
             </div>
           </template>
@@ -64,20 +68,44 @@ const dragOptions = computed(() => ({
   flex-direction: column;
 
   &__container {
-    border: solid 3px var(--accent-color);
+    border: solid 2px var(--accent-color);
+    border-top: none;
+    border-bottom: none;
   }
 
   &__form-blocks {
+    cursor: pointer;
     color: white;
     text-align: center;
-    border: solid 0.15vw var(--accent-color);
     border: none;
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    .form-block {
+      border-bottom: solid 2px var(--accent-color);
+
+      &.last-form-block {
+        border-bottom: none;
+      }
+    }
   }
 }
 
 .ghost {
   opacity: 0;
+}
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1024px) {
+  .editor {
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 540px) {
+  .editor {
+    border-radius: 12px;
+  }
 }
 </style>

@@ -1,30 +1,27 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { LoadingIndicator } from "@/shared/ui";
-import { BlockSettings } from "@/entities/form";
-import TrashIcon from "@/assets/icons/TrashIcon.vue";
-import CopyIcon from "@/assets/icons/CopyIcon.vue";
+import TrashIcon from "@/assets/icons/Buttons/TrashIcon.vue";
+import CopyIcon from "@/assets/icons/Buttons/CopyIcon.vue";
+import { BlockSettings, useFormStore } from "@/entities/form";
+
+const { addBlock, removeBlock } = useFormStore();
 
 const props = defineProps<{
-  element: BlockSettings;
+  block: BlockSettings;
   index: number;
-}>();
-
-const emit = defineEmits<{
-  (e: "remove", index: number): void;
-  (e: "duplicate", block: BlockSettings): void;
 }>();
 
 const isLoading = ref(false);
 
-function duplicateBlock() {
-  emit("duplicate", props.element);
+function handleCopy() {
+  addBlock(props.block.type);
 }
 
-function removeBlock() {
+function handleRemove() {
   isLoading.value = true;
   setTimeout(() => {
-    emit("remove", props.index);
+    removeBlock(props.index);
     isLoading.value = false;
   }, 500);
 }
@@ -32,42 +29,50 @@ function removeBlock() {
 
 <template>
   <a-flex v-if="!isLoading" gap="middle" class="icon-container">
-    <button class="duplicate-button" @click="duplicateBlock" @click.stop>
+    <a-button class="btn" type="text" @click="handleCopy" @click.stop>
       <CopyIcon />
-    </button>
-    <button class="remove-button" @click="removeBlock" @click.stop>
+    </a-button>
+    <a-button class="btn" type="text" @click="handleRemove" @click.stop>
       <TrashIcon />
-    </button>
+    </a-button>
   </a-flex>
-  <a-flex v-else>
-    <LoadingIndicator class="loading" />
+  <a-flex v-else class="loading">
+    <LoadingIndicator />
   </a-flex>
 </template>
 
 <style lang="scss" scoped>
 .icon-container {
-  opacity: 0;
+  // opacity: 0;
   transition: opacity 0.3s;
+
+  .btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    padding: 0;
+
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: var(--accent-color);
+      stroke: var(--accent-color);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--hover-accent-color);
+        stroke: var(--hover-accent-color);
+      }
+    }
+  }
 }
 
 .block:hover .icon-container {
   opacity: 1;
-}
-
-.remove-button,
-.duplicate-button {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-
-  & svg {
-    width: 1.3vw;
-    height: 1.3vw;
-    fill: var(--accent-color);
-  }
-}
-
-.loading {
-  width: 3.2vw;
 }
 </style>

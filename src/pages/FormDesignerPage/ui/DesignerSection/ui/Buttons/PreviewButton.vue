@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { AppBtn } from "@/shared/ui";
-import PreviewIcon from "@/assets/icons/PreviewIcon.vue";
+import PreviewIcon from "@/assets/icons/Buttons/PreviewIcon.vue";
 import { useFormStore, usePreviewStore } from "@/entities/form";
 import { PreviewModal } from "@/widgets/Modals";
 

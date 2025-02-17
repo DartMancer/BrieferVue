@@ -33,7 +33,7 @@ function isSelected(conditionName: string, variableId: string): boolean {
 </script>
 
 <template>
-  <a-flex
+  <!-- <a-flex
     v-for="(condition, index) in formBlock.conditions"
     :key="index"
     vertical
@@ -53,7 +53,7 @@ function isSelected(conditionName: string, variableId: string): boolean {
         </div>
       </div>
     </a-flex>
-  </a-flex>
+  </a-flex> -->
 </template>
 
 <style lang="scss" scoped>

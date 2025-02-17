@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { BrieferText } from "@/shared/ui";
-import BrieferLogoIcon from "@/assets/icons/BrieferLogoIcon.vue";
 import { onMounted, onUnmounted, ref } from "vue";
-import BurgerMenuIcon from "@/assets/icons/BurgerMenuIcon.vue";
+import { BrieferText } from "@/shared/ui";
+import LogoIcon from "@/assets/icons/Other/LogoIcon.vue";
+import BurgerMenuIcon from "@/assets/icons/Buttons/BurgerMenuIcon.vue";
 import HeaderDrawer from "../Modals/HeaderDrawer.vue";
 
 const open = ref<boolean>(false);
@@ -35,10 +35,12 @@ onUnmounted(() => {
     align="center"
   >
     <RouterLink class="logo" to="/">
-      <BrieferLogoIcon class="logo__icon" />
+      <LogoIcon class="logo__icon" />
       <a-flex justify="flex-start" vertical>
         <BrieferText class="logo__title" />
-        <span class="title logo__subtitle">{{ $t.header.subtitle }}</span>
+        <span class="title logo__subtitle">
+          {{ $t.components.header.subtitle }}
+        </span>
       </a-flex>
     </RouterLink>
     <a-button class="burger-menu" type="text" @click="showDrawer">

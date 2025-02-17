@@ -1,0 +1,15 @@
+export const IconsNames = {
+  shortTextIcon: "ShortTextIcon",
+  longTextIcon: "LongTextIcon",
+  clearTextIcon: "ClearTextIcon",
+  radioIcon: "RadioIcon",
+  multipleIcon: "MultipleIcon",
+  colorIcon: "ColorIcon",
+  dividerIcon: "DividerIcon",
+  checkBoxIcon: "CheckBoxIcon",
+  numbersIcon: "NumbersIcon",
+  contactsIcon: "ContactsIcon",
+  linksIcon: "LinkIcon",
+  fileIcon: "FileIcon",
+  dateIcon: "DateIcon",
+};

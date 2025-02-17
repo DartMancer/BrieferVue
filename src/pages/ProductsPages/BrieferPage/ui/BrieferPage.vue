@@ -6,27 +6,26 @@ import SecondBrieferScreen from "@/assets/images/SecondBrieferScreen.webp";
 import ThirdBrieferScreen from "@/assets/images/ThirdBrieferScreen.webp";
 import FourthBrieferScreen from "@/assets/images/FourthBrieferScreen.webp";
 import DescriptionSection from "./DescriptionSection.vue";
-import TechnologyStackComponent from "./TechnologyStackComponent.vue";
 import DownloadButton from "./DownloadButton.vue";
 
 const productDetails = [
   {
-    text: GlobalTexts.companyInfo.brieferPage.firstDetail,
+    text: GlobalTexts.pages.products.briefer.firstDetail,
     image: FirstBrieferScreen,
     reverse: false,
   },
   {
-    text: GlobalTexts.companyInfo.brieferPage.secondDetail,
+    text: GlobalTexts.pages.products.briefer.secondDetail,
     image: SecondBrieferScreen,
     reverse: true,
   },
   {
-    text: GlobalTexts.companyInfo.brieferPage.thirdDetail,
+    text: GlobalTexts.pages.products.briefer.thirdDetail,
     image: ThirdBrieferScreen,
     reverse: false,
   },
   {
-    text: GlobalTexts.companyInfo.brieferPage.fourthDetail,
+    text: GlobalTexts.pages.products.briefer.fourthDetail,
     image: FourthBrieferScreen,
     reverse: true,
   },
@@ -40,7 +39,7 @@ const productDetails = [
       <a-flex justify="center" align="center" vertical>
         <BrieferGradientTitle :font-size="'8vw'" />
         <p class="briefer-page__title">
-          {{ $t.companyInfo.brieferPage.title }}
+          {{ $t.pages.products.briefer.title }}
         </p>
         <a-divider />
         <a-flex
@@ -56,7 +55,6 @@ const productDetails = [
           />
           <a-divider />
         </a-flex>
-        <TechnologyStackComponent />
         <DownloadButton class="briefer-page__download-button" />
       </a-flex>
     </div>

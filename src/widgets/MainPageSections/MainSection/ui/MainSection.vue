@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TextsCombined } from "@/shared/ui";
-import { chooseTitleTexts, createTitleTexts } from "../model";
+import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
 </script>
 
 <template>
@@ -13,19 +13,23 @@ import { chooseTitleTexts, createTitleTexts } from "../model";
     <a-flex class="content-block" vertical>
       <a-flex class="block choose" align="center" vertical>
         <span class="block-title">
-          <TextsCombined :texts="chooseTitleTexts.content" />
+          <TextsCombined :texts="TITLE_CHOOSE.content" />
         </span>
-        <span class="subtitle">{{ $t.main.chooseTemplateSubtitle }}</span>
+        <span class="subtitle">{{ $t.pages.main.chooseTemplateSubtitle }}</span>
         <a-button class="button">
-          <span class="button__text"> {{ $t.main.chooseTemplateNow }}</span>
+          <span class="button__text">
+            {{ $t.pages.main.chooseTemplateNow }}
+          </span>
         </a-button>
       </a-flex>
       <a-flex class="block create" align="center" vertical>
         <span class="block-title">
-          <TextsCombined :texts="createTitleTexts.content" />
+          <TextsCombined :texts="TITLE_CREATE.content" />
         </span>
         <a-button class="button">
-          <span class="button__text"> {{ $t.main.createTemplateNow }}</span>
+          <span class="button__text">
+            {{ $t.pages.main.createTemplateNow }}
+          </span>
         </a-button>
       </a-flex>
     </a-flex>

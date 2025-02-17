@@ -1,39 +1,40 @@
 <script lang="ts" setup>
 import { ref, watch } from "vue";
 import { BlockTitle } from "@/shared/ui";
-import { LIST_LOOKS } from "@/shared/constants";
-import DropDownArrowIcon from "@/assets/icons/DropDownArrowIcon.vue";
+import { RADIO_LIST_LOOKS } from "@/shared/constants";
+// import DropDownArrowIcon from "@/assets/icons/DropDownArrowIcon.vue";
 import { useFormStore } from "@/entities/form";
 
-const props = defineProps<{
-  modalVisible: boolean;
-  currentIndex: number;
-}>();
+// const props = defineProps<{
+//   modalVisible: boolean;
+//   currentIndex: number;
+// }>();
 
-const store = useFormStore();
-const listLooks = ref(store.tempBlock?.listLooks || "");
+// const { tempBlock } = useFormStore();
 
-function setVar(value: string) {
-  listLooks.value = value;
-}
+// const listLooks = ref(tempBlock?.settings.list || "");
 
-watch(
-  () => props.modalVisible,
-  (newVal) => {
-    if (newVal) {
-      listLooks.value = store.tempBlock?.listLooks || "";
-    }
-  }
-);
+// function setVar(value: string) {
+//   listLooks.value = value;
+// }
 
-watch(
-  () => listLooks.value,
-  (newVal) => {
-    if (newVal && store.tempBlock) {
-      store.tempBlock.listLooks = newVal as "Плитка" | "В один ряд";
-    }
-  }
-);
+// watch(
+//   () => props.modalVisible,
+//   (newVal) => {
+//     if (newVal) {
+//       listLooks.value = tempBlock?.listLooks || "";
+//     }
+//   }
+// );
+
+// watch(
+//   () => listLooks.value,
+//   (newVal) => {
+//     if (newVal && tempBlock) {
+//       tempBlock.listLooks = newVal as "Плитка" | "В один ряд";
+//     }
+//   }
+// );
 </script>
 
 <template>
@@ -44,14 +45,14 @@ watch(
     <a-dropdown :placement="'bottom'" :trigger="['click']">
       <a-button class="list-looks-section__button">
         <a-flex justify="space-between" align="center">
-          {{ listLooks }}
-          <DropDownArrowIcon />
+          <!-- {{ listLooks }} -->
+          <!-- <DropDownArrowIcon /> -->
         </a-flex>
       </a-button>
       <template #overlay>
         <a-menu>
-          <a-menu-item v-for="(vars, index) in LIST_LOOKS" :key="index">
-            <a @click="setVar(vars)">{{ vars }}</a>
+          <a-menu-item v-for="(vars, index) in RADIO_LIST_LOOKS" :key="index">
+            <!-- <a @click="setVar(vars)">{{ vars }}</a> -->
           </a-menu-item>
         </a-menu>
       </template>

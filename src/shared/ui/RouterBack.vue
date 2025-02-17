@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
-import BackArrowIcon from "@/assets/icons/BackArrowIcon.vue";
+import BackArrowIcon from "@/assets/icons/Arrows/ArrowBackIcon.vue";
 import { AppBtn } from "./Buttons";
 
 const router = useRouter();

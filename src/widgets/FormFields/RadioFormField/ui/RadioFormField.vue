@@ -9,9 +9,9 @@ const props = defineProps<{
 </script>
 
 <template>
-  <component
+  <!-- <component
     :is="getRadioLookUtils(props.formBlock.listLooks!)"
     :formBlock="props.formBlock"
     :index="props.index"
-  />
+  /> -->
 </template>

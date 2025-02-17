@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { blocks } from "@/shared/constants";
+import { BLOCKS_LIST } from "@/shared/constants";
 import { useFormStore } from "@/entities/form";
 import BlockListItem from "./BlockListItem.vue";
 
@@ -8,12 +8,14 @@ const { addBlock } = useFormStore();
 
 <template>
   <a-flex class="blocks-list" vertical>
-    <span class="title blocks-list__title">{{ $t.formDesigner.blocks }}</span>
+    <span class="title blocks-list__title">
+      {{ $t.pages.formDesigner.blocks }}
+    </span>
     <div
-      v-for="(block, index) in blocks"
-      :key="index"
+      v-for="block in BLOCKS_LIST"
+      :key="block.id"
       class="blocks-list__block"
-      @click="addBlock(block)"
+      @click="addBlock(block.type)"
     >
       <BlockListItem :block="block" />
     </div>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { getIconComponent } from "@/shared/utils";
-import QuestionIcon from "@/assets/icons/QuestionIcon.vue";
+import QuestionIcon from "@/assets/icons/Buttons/QuestionIcon.vue";
 import { BlockSettings } from "@/entities/form";
 
 defineProps<{
@@ -11,17 +11,14 @@ defineProps<{
 <template>
   <a-flex justify="space-between" align="center">
     <a-flex class="block-content" align="center">
-      <component
-        :is="getIconComponent(block.generalSettings.icon)"
-        class="icon"
-      />
+      <component :is="getIconComponent(block.icon)" class="icon" />
       <span class="name">
-        {{ block.generalSettings.title }}
+        {{ block.title }}
       </span>
     </a-flex>
     <a-popover trigger="hover" placement="right" @click.stop>
       <template #content>
-        <span>{{ block.generalSettings.supportText }}</span>
+        <span>{{ block.supportText }}</span>
       </template>
       <QuestionIcon class="question-icon" />
     </a-popover>

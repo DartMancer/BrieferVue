@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { TextsCombined } from "@/shared/ui";
-import { usefullItems } from "../model";
+import { USEFULL_ITEMS } from "../model";
 </script>
 
 <template>
   <a-flex
-    v-for="content in usefullItems"
+    v-for="content in USEFULL_ITEMS"
     :class="['usefull-item', { reverse: content.reverse }]"
     align="center"
   >

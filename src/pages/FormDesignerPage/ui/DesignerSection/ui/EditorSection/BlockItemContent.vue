@@ -1,48 +1,88 @@
 <script lang="ts" setup>
 import { getIconComponent } from "@/shared/utils";
-import { GeneralSettingsType } from "@/entities/form";
+import { BlockSettings } from "@/entities/form";
 
-const props = defineProps<{
-  element: GeneralSettingsType;
-  index: number;
+defineProps<{
+  block: BlockSettings;
 }>();
 </script>
 
 <template>
-  <a-flex vertical justify="flex-start">
-    <p class="block-title">
-      {{ props.element.title }}
-    </p>
-    <a-flex horizontal justify="flex-start" align="center" gap="small">
-      <component
-        :is="getIconComponent(props.element.icon)"
-        class="block-icon"
-      />
-      <p class="block-name">
-        {{ props.element.subtitle }}
-      </p>
+  <a-flex class="item-content" justify="flex-start" vertical>
+    <span class="block-title">{{ block.title }}</span>
+    <a-flex justify="flex-start" align="center" gap="small">
+      <component :is="getIconComponent(block.icon)" class="block-icon" />
+      <span class="block-name">{{ block.subtitle }}</span>
     </a-flex>
   </a-flex>
 </template>
 
 <style lang="scss" scoped>
-.block-title {
-  font-size: 1vw;
-  margin: 0;
-  text-align: start;
+.item-content {
+  gap: 6px;
+  .block-title {
+    font-size: 18px;
+    text-align: start;
+  }
+
+  .block-name {
+    font-size: 14px;
+    color: var(--accent-color);
+    text-align: start;
+  }
+
+  .block-icon {
+    max-width: 16px;
+    max-height: 16px;
+    fill: var(--accent-color);
+    stroke: var(--accent-color);
+  }
 }
 
-.block-name {
-  font-size: 0.7vw;
-  color: var(--accent-color);
-  text-align: start;
-  margin: 0;
+@media (max-width: 1280px) {
+  .item-content {
+    gap: 4px;
+    .block-title {
+      font-size: 16px;
+    }
+
+    .block-name {
+      font-size: 12px;
+    }
+  }
 }
 
-.block-icon {
-  max-width: 0.7vw;
-  max-height: 0.7vw;
-  fill: var(--accent-color);
-  stroke: var(--accent-color);
+@media (max-width: 1024px) {
+  .item-content {
+    .block-title {
+      font-size: 14px;
+    }
+
+    .block-name {
+      font-size: 12px;
+    }
+
+    .block-icon {
+      max-width: 14px;
+      max-height: 14px;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .item-content {
+    .block-title {
+      font-size: 12px;
+    }
+
+    .block-name {
+      font-size: 10px;
+    }
+
+    .block-icon {
+      max-width: 12px;
+      max-height: 12px;
+    }
+  }
 }
 </style>

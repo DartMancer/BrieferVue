@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PlusIcon from "@/assets/icons/PlusIcon.vue";
+import PlusIcon from "@/assets/icons/Other/PlusIcon.vue";
 
 const props = defineProps<{
   text: string;

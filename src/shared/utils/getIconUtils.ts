@@ -5,6 +5,6 @@ export const getIconComponent = (iconName?: string) => {
     return;
   }
   return defineAsyncComponent(
-    () => import(`@/assets/icons/${iconName.trim()}.vue`)
+    () => import(`@/assets/icons/Blocks/${iconName.trim()}.vue`)
   );
 };

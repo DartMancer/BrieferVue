@@ -4,16 +4,22 @@ import { TitleType } from "./TitleType";
 const className = "title";
 const accentClassName = `${className} accent`;
 
-export const chooseTitleTexts = <TitleType>{
+export const TITLE_CHOOSE = <TitleType>{
   content: [
-    { text: GlobalTexts.main.chooseTemplateFirst, className: className },
-    { text: GlobalTexts.main.chooseTemplateSecond, className: accentClassName },
+    { text: GlobalTexts.pages.main.chooseTemplateFirst, className: className },
+    {
+      text: GlobalTexts.pages.main.chooseTemplateSecond,
+      className: accentClassName,
+    },
   ],
 };
 
-export const createTitleTexts = <TitleType>{
+export const TITLE_CREATE = <TitleType>{
   content: [
-    { text: GlobalTexts.main.createTemplateFirst, className: className },
-    { text: GlobalTexts.main.createTemplateSecond, className: accentClassName },
+    { text: GlobalTexts.pages.main.createTemplateFirst, className: className },
+    {
+      text: GlobalTexts.pages.main.createTemplateSecond,
+      className: accentClassName,
+    },
   ],
 };

@@ -6,7 +6,7 @@ import { BrieferLogo } from "@/shared/ui";
   <a-flex vertical justify="space-evenly" class="description">
     <BrieferLogo iconSize="5vw" fontSize="4vw" />
     <p class="description__text">
-      {{ $t.companyInfo.brieferDescription }}
+      {{ $t.pages.companyInfo.brieferDescription }}
     </p>
   </a-flex>
 </template>

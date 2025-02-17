@@ -29,7 +29,6 @@ import { MainSection, UsefullSection, AdvantageSection } from "@/widgets";
 }
 
 .body-section {
-  max-width: 1440px;
   padding: 75px 50px;
   gap: 90px;
 

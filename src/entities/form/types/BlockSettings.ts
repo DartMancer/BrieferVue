@@ -1,44 +1,67 @@
-type RangeValue = [string, string];
-export interface BlockSettings {
+import {
+  ContactsBlockSettings,
+  DateBlockSettings,
+  DividerBlockSetting,
+  FileBlockSettings,
+  LinksBlockSettings,
+  MultipleSelectSettings,
+  NumberBlockSettings,
+  RadioBlockSettings,
+  TextBlockSettings,
+} from "./BlocksSettings";
+import { BlockType } from "./BlockType";
+
+export interface BlockBase<T = unknown> {
   id: string;
-
-  //! general
-  generalSettings: GeneralSettingsType;
-
-  //! common
-  commentary?: string;
-  defaultValue?: string;
-  variables?: ListVariablesType[];
-
-  //! specific
-  conditions?: ListVariablesType[]; //? ScaleRating
-  listLooks?: "Плитка" | "В один ряд"; //? Radio
-  dateModel?: DatePickerType; //? DatePicker
-  fileModel?: FileType; //? File
-}
-
-export interface GeneralSettingsType {
+  type: BlockType;
   icon: string;
   title: string;
-  subtitle: string;
-  isNeedDefault: boolean;
-  requiredField: boolean;
+  subtitle?: string;
   supportText: string;
+  requiredField?: boolean;
+  settings?: T;
+  isSpecial?: boolean;
 }
 
-export interface ListVariablesType {
-  id: string;
-  label: string;
-  value: string;
+export interface StandartBlock extends BlockBase {
+  type: "clear_text" | "checkbox" | "color";
+}
+export interface TextBlock extends BlockBase<TextBlockSettings> {
+  type: "text" | "textarea";
+}
+export interface RadioBlock extends BlockBase<RadioBlockSettings> {
+  type: "radio";
+}
+export interface MultipleSelectBlock extends BlockBase<MultipleSelectSettings> {
+  type: "multiple_select";
+}
+export interface DividerBlock extends BlockBase<DividerBlockSetting> {
+  type: "divider";
+}
+export interface NumberBlock extends BlockBase<NumberBlockSettings> {
+  type: "number";
+}
+export interface ContactsBlock extends BlockBase<ContactsBlockSettings> {
+  type: "contacts";
+}
+export interface LinksBlock extends BlockBase<LinksBlockSettings> {
+  type: "links";
+}
+export interface DateBlock extends BlockBase<DateBlockSettings> {
+  type: "date";
+}
+export interface FileBlock extends BlockBase<FileBlockSettings> {
+  type: "file";
 }
 
-export interface DatePickerType {
-  isDateRange: boolean;
-  dateRange?: RangeValue;
-  isLimitRange: boolean;
-}
-
-export interface FileType {
-  maxSize?: number;
-  maxFiles?: number;
-}
+export type BlockSettings =
+  | StandartBlock
+  | TextBlock
+  | RadioBlock
+  | MultipleSelectBlock
+  | DividerBlock
+  | NumberBlock
+  | ContactsBlock
+  | LinksBlock
+  | DateBlock
+  | FileBlock;

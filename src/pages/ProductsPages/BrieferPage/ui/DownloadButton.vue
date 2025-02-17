@@ -3,7 +3,7 @@ import { ref, onMounted } from "vue";
 import { ref as storageRef, getDownloadURL } from "firebase/storage";
 import { storage } from "@/firebase/config";
 import { AppBtn } from "@/shared/ui";
-import DownloadIcon from "@/assets/icons/DownloadIcon.vue";
+import DownloadIcon from "@/assets/icons/Buttons/DownloadIcon.vue";
 
 const fileUrl = ref<string>("");
 
@@ -33,7 +33,7 @@ onMounted(fetchFileUrl);
     <AppBtn @click="downloadFile" class="download-button">
       <DownloadIcon class="icon" />
       <span class="download-button__text title">
-        {{ $t.companyInfo.brieferPage.presentation }}
+        {{ $t.components.buttons.presentation }}
       </span>
     </AppBtn>
   </Transition>

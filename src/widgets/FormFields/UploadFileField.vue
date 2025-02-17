@@ -17,7 +17,7 @@ const previewFormState = defineModel<Record<string, any>>("previewFormState", {
 const key = Object.keys(previewFormState.value!)[props.index];
 
 const fileList = ref<UploadFile[]>([]);
-const maxFiles = ref<number>(props.formBlock.fileModel?.maxFiles ?? 20);
+// const maxFiles = ref<number>(props.formBlock.fileModel?.maxFiles ?? 20);
 // const maxSize = ref<number>(props.formBlock.fileModel?.maxSize ?? 20);
 // const maxSizeBytes = maxSize.value * 1024 * 1024;
 // const sizeCounter = ref<number>(0);
@@ -63,7 +63,7 @@ const onChange = () => {
 
 <template>
   <a-flex vertical gap="middle" align="start">
-    <a-upload
+    <!-- <a-upload
       v-model:file-list="fileList"
       :multiple="true"
       :customRequest="customRequest"
@@ -76,7 +76,7 @@ const onChange = () => {
           <p class="upload-button__title">Загрузить</p>
         </AppBtn>
       </a-flex>
-    </a-upload>
+    </a-upload> -->
     <!-- <a-flex align="center" gap="middle">
       <label class="upload-button">
         <a-flex gap="small" justify="center" align="center">

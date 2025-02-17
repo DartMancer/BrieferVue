@@ -1,40 +1,94 @@
 <template>
-  <div class="body">
-    <a-flex class="body__empty-list" justify="center" align="center">
-      <div class="body__empty-list__title title">
-        Начните создавать анкету сейчас
+  <div class="empty-editor-wrapper">
+    <a-flex class="content-container" justify="center" align="center" vertical>
+      <div class="title">
+        {{ $t.pages.formDesigner.startCreateBrief }}
       </div>
-      <div class="body__empty-list__subtitle title" align="center">
-        Перетащите сюда блок из списка слева
+      <div class="subtitle" align="center">
+        {{ $t.pages.formDesigner.chooseFromList }}
       </div>
     </a-flex>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.body {
+.empty-editor-wrapper {
   width: 100%;
   height: 100%;
-  border-top: none;
+  border-bottom: none;
   padding: 30px;
 
-  &__empty-list {
+  .content-container {
     width: 100%;
-    flex-direction: column;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='20' ry='20' stroke='%23959BCDFF' stroke-width='5' stroke-dasharray='20%2c20' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
-    border-radius: 20px;
+    gap: 14px;
     padding: 90px;
-    gap: 10px;
+    border-radius: 30px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%23959BCDFF' stroke-width='8' stroke-dasharray='20%2c20' stroke-dashoffset='70'/%3e%3c/svg%3e");
 
-    &__title {
-      font-size: 35px;
+    .title {
+      font-size: 40px;
       text-align: center;
     }
 
-    &__subtitle {
-      font-size: 25px;
+    .subtitle {
+      font-size: 30px;
       color: var(--accent-color);
       text-align: center;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .empty-editor-wrapper {
+    padding: 30px;
+
+    .content-container {
+      padding: 70px;
+
+      .title {
+        font-size: 35px;
+      }
+
+      .subtitle {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .empty-editor-wrapper {
+    .content-container {
+      border-radius: 20px;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='20' ry='20' stroke='%23959BCDFF' stroke-width='5' stroke-dasharray='20%2c20' stroke-dashoffset='70'/%3e%3c/svg%3e");
+
+      .title {
+        font-size: 25px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .empty-editor-wrapper {
+    padding: 20px;
+
+    .content-container {
+      padding: 20px;
+      border-radius: 10px;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23959BCDFF' stroke-width='5' stroke-dasharray='20%2c20' stroke-dashoffset='70'/%3e%3c/svg%3e");
+
+      .title {
+        font-size: 20px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
     }
   }
 }

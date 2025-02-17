@@ -3,8 +3,8 @@ import { ref, computed, nextTick, watch } from "vue";
 import { v4 as uuidv4 } from "uuid";
 import draggable from "vuedraggable";
 import { AppBtn, BlockTitle } from "@/shared/ui";
-import DragVerticalIcon from "@/assets/icons/DragVerticalIcon.vue";
-import TrashIcon from "@/assets/icons/TrashIcon.vue";
+import DragVerticalIcon from "@/assets/icons/Other/DragVerticalIcon.vue";
+import TrashIcon from "@/assets/icons/Buttons/TrashIcon.vue";
 
 const props = defineProps<{
   modalVisible: boolean;

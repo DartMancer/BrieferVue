@@ -1,83 +1,119 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import DragIcon from "@/assets/icons/DragIcon.vue";
-import { BlockSettings, useFormStore } from "@/entities/form";
+import { onMounted, ref } from "vue";
+import DragIcon from "@/assets/icons/Other/DragIcon.vue";
+import {
+  BlockSettings,
+  BlockWithoutDivider,
+  DividerBlock,
+  useFormStore,
+} from "@/entities/form";
 import { BlockModal } from "@/widgets/Modals";
 import Buttons from "./Buttons.vue";
 import BlockItemContent from "./BlockItemContent.vue";
+import SpecialItemContent from "./SpecialItemContent.vue";
 
-const store = useFormStore();
-const props = defineProps<{ element: BlockSettings; index: number }>();
+defineProps<{ block: BlockSettings; index: number }>();
 
 const modalVisible = ref<boolean>(false);
-
-function openModal() {
-  modalVisible.value = true;
-}
-
-function closeModal() {
-  modalVisible.value = false;
-}
+const openModal = () => (modalVisible.value = true);
+const closeModal = () => (modalVisible.value = false);
 </script>
 
 <template>
-  <button class="block" @click="openModal">
-    <div class="move-icon">
-      <DragIcon class="drag-zone" />
-    </div>
-    <a-flex justify="space-between" align="center">
-      <BlockItemContent
-        :element="props.element.generalSettings"
-        :index="props.index"
-      />
-      <Buttons
-        :element="props.element"
-        :index="props.index"
-        @remove="() => store.removeBlock(props.index)"
-        @duplicate="() => store.addBlock(props.element)"
-      />
-      <BlockModal
-        v-model:modalVisible="modalVisible"
-        :currentIndex="props.index"
-        @closeModal="closeModal"
-      />
+  <div :class="['block', { special: block.isSpecial }]" @click="openModal">
+    <a-flex class="move-icon drag-zone" justify="center" align="center">
+      <DragIcon />
     </a-flex>
-  </button>
+    <a-flex justify="space-between" align="center">
+      <BlockItemContent v-if="!block.isSpecial" :block="block" />
+      <SpecialItemContent v-else :block="block" />
+      <Buttons :block="block" :index="index" />
+      <!-- @remove="() => removeBlock(index)"
+        @duplicate="() => addBlock(block)" -->
+      <!-- <BlockModal
+        v-model:modalVisible="modalVisible"
+        :currentIndex="index"
+        @closeModal="closeModal"
+      /> -->
+    </a-flex>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .block {
   cursor: pointer;
   position: relative;
-  padding: 1vw 2.1vw;
-  background-color: var(--element-color);
-  border: none;
-  border-bottom: solid 0.1vw var(--accent-color);
   width: 100%;
-  transition: 0.3s ease-in-out;
-}
+  padding: 15px 25px;
+  background-color: var(--element-color);
+  transition: 0.2s ease-in-out;
 
-.block:hover {
-  box-shadow: 0 0 0.15vw var(--accent-color);
-}
+  &.special {
+    padding: 28px 25px;
+  }
 
-.block:hover .move-icon {
-  opacity: 1;
+  &:hover .move-icon {
+    opacity: 1;
+  }
 }
 
 .move-icon {
+  cursor: move;
   position: absolute;
-  top: 0.1vw;
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
-  cursor: grab;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
 
   & svg {
-    width: 0.8vw;
-    height: 0.8vw;
+    width: 14px;
+    height: 14px;
     fill: var(--accent-color);
+  }
+}
+
+@media (max-width: 1280px) {
+  .block {
+    padding: 10px 20px;
+
+    &.special {
+      padding: 21px 20px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .move-icon {
+    top: 0px;
+    opacity: 1;
+    width: 36px;
+    height: 24px;
+
+    & svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .block {
+    padding: 10px 15px;
+
+    &.special {
+      padding: 19px 15px;
+    }
+  }
+
+  .move-icon {
+    width: 30px;
+    height: 20px;
+
+    & svg {
+      width: 10px;
+      height: 10px;
+    }
   }
 }
 </style>

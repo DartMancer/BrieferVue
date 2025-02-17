@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useRoute, useRouter } from "vue-router";
-import { headerItems } from "@/shared/constants";
+import { HEADER_ITEMS } from "@/shared/constants";
 
 const open = defineModel<boolean>("open", { required: true });
 
@@ -21,13 +21,13 @@ const afterOpenChange = (bool: boolean) => {
   <a-drawer
     v-model:open="open"
     class="header-drawer"
-    :title="$t.header.menu"
+    :title="$t.components.header.menu"
     placement="right"
     @after-open-change="afterOpenChange"
   >
     <a-flex class="header-items" vertical>
       <div
-        v-for="(item, idx) in headerItems"
+        v-for="(item, idx) in HEADER_ITEMS"
         :class="['header-item', { active: isActiveRoute(item.path) }]"
         :key="idx"
         align="center"

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router";
-import { headerItems } from "@/shared/constants";
+import { HEADER_ITEMS } from "@/shared/constants";
 import { BrieferText } from "@/shared/ui";
-import BrieferLogoIcon from "@/assets/icons/BrieferLogoIcon.vue";
+import LogoIcon from "@/assets/icons/Other/LogoIcon.vue";
 import { onMounted, onUnmounted, ref } from "vue";
 
 const route = useRoute();
@@ -36,15 +36,15 @@ onUnmounted(() => {
     align="center"
   >
     <RouterLink class="logo" to="/">
-      <BrieferLogoIcon class="logo__icon" />
+      <LogoIcon class="logo__icon" />
       <a-flex justify="flex-start" vertical>
         <BrieferText class="logo__title" />
-        <span class="logo__subtitle">{{ $t.header.subtitle }}</span>
+        <span class="logo__subtitle">{{ $t.components.header.subtitle }}</span>
       </a-flex>
     </RouterLink>
     <a-flex class="header-items" justify="flex-end">
       <div
-        v-for="(item, idx) in headerItems"
+        v-for="(item, idx) in HEADER_ITEMS"
         :class="['header-item', { active: isActiveRoute(item.path) }]"
         :key="idx"
         align="center"

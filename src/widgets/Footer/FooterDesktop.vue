@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { BrieferText } from "@/shared/ui";
-import BrieferLogoIcon from "@/assets/icons/BrieferLogoIcon.vue";
-import { footerContactItems, footerItems } from "@/shared/constants";
+import LogoIcon from "@/assets/icons/Other/LogoIcon.vue";
+import { footerContactItems, FOOTER_ITEMS } from "@/shared/constants";
 
 const goToLink = (link: string) => {
   window.open(link, "_blank");
@@ -12,13 +12,15 @@ const goToLink = (link: string) => {
   <footer class="footer top">
     <a-flex class="footer-top" justify="space-between">
       <a-flex class="logo" align="center">
-        <BrieferLogoIcon />
+        <LogoIcon />
         <a-flex class="logo-text" vertical>
           <BrieferText class="logo-title" />
-          <span class="title logo-subtitle">{{ $t.main.appSubtitle }}</span>
+          <span class="title logo-subtitle">
+            {{ $t.pages.main.appSubtitle }}
+          </span>
         </a-flex>
       </a-flex>
-      <a-flex class="footer-item" v-for="item in footerItems" vertical>
+      <a-flex class="footer-item" v-for="item in FOOTER_ITEMS" vertical>
         <span class="title">{{ item.title }}</span>
         <a-flex vertical>
           <div v-for="(subItem, index) in item.items" :key="index">
@@ -29,7 +31,7 @@ const goToLink = (link: string) => {
         </a-flex>
       </a-flex>
       <a-flex class="contacts" vertical>
-        <span class="title">{{ $t.footer.contacts }}</span>
+        <span class="title">{{ $t.components.footer.contacts }}</span>
         <a-flex class="contact">
           <a-flex v-for="contact in footerContactItems">
             <a-button
@@ -49,15 +51,15 @@ const goToLink = (link: string) => {
     <a-flex class="footer-bottom" justify="space-between" align="center">
       <a-flex class="company">
         <span>
-          <span class="accent">{{ $t.footer.companyFirst }}</span>
-          {{ $t.footer.companySecond }}
+          <span class="accent">{{ $t.components.footer.companyFirst }}</span>
+          {{ $t.components.footer.companySecond }}
         </span>
         <span>
-          <span class="accent">{{ $t.footer.innFirst }}</span>
-          {{ $t.footer.innSecond }}
+          <span class="accent">{{ $t.components.footer.innFirst }}</span>
+          {{ $t.components.footer.innSecond }}
         </span>
       </a-flex>
-      <span>{{ $t.footer.copyrigth }}</span>
+      <span>{{ $t.components.footer.copyrigth }}</span>
     </a-flex>
   </footer>
 </template>

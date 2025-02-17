@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BrieferLogoIcon from "@/assets/icons/BrieferLogoIcon.vue";
+import LogoIcon from "@/assets/icons/Other/LogoIcon.vue";
 import { BrieferText } from ".";
 
 const props = withDefaults(
@@ -18,7 +18,7 @@ const props = withDefaults(
 
 <template>
   <a-flex align="center">
-    <BrieferLogoIcon
+    <LogoIcon
       class="logo"
       :style="{
         width: props.fontSize,

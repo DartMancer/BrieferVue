@@ -15,9 +15,9 @@ const indicator = h(LoadingOutlined, {
 function simulateLoading() {
   loading.value = true;
 
-  setTimeout(() => {
-    loading.value = false;
-  }, 1000);
+  // setTimeout(() => {
+  //   loading.value = false;
+  // }, 1000);
 }
 
 simulateLoading();

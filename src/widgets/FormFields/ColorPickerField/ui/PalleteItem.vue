@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { AppBtn } from "@/shared/ui";
-import LockIcon from "@/assets/icons/LockIcon.vue";
-import UnlockIcon from "@/assets/icons/UnlockIcon.vue";
-import CopyIcon from "@/assets/icons/CopyIcon.vue";
-import CloseIcon from "@/assets/icons/CloseIcon.vue";
-import PlusIcon from "@/assets/icons/PlusIcon.vue";
+import LockIcon from "@/assets/icons/Buttons/LockIcon.vue";
+import UnlockIcon from "@/assets/icons/Buttons/UnlockIcon.vue";
+import CopyIcon from "@/assets/icons/Buttons/CopyIcon.vue";
+import CloseIcon from "@/assets/icons/Other/CloseIcon.vue";
+import PlusIcon from "@/assets/icons/Other/PlusIcon.vue";
 import ColorTextButton from "./ColorTextButton.vue";
 
 defineProps<{

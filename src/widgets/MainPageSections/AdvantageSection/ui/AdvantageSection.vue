@@ -7,8 +7,8 @@ import TitleBlock from "./TitleBlock.vue";
   <a-flex justify="center" vertical>
     <a-flex class="blocks" vertical>
       <a-flex class="title-blocks">
-        <TitleBlock :title="$t.main.withoutBriefer" without />
-        <TitleBlock :title="$t.main.withBriefer" />
+        <TitleBlock :title="$t.pages.main.withoutBriefer" without />
+        <TitleBlock :title="$t.pages.main.withBriefer" />
       </a-flex>
       <a-flex class="advantages-blocks" vertical>
         <AdvantageBlocks />
