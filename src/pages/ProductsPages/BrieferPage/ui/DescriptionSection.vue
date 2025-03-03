@@ -1,41 +1,107 @@
 <script setup lang="ts">
-const props = defineProps({
-  text: String,
-  image: String,
-  reverse: { type: Boolean, default: false },
+import { storeToRefs } from "pinia";
+import { DetailsType } from "../model";
+import { useScreenStore } from "@/app/providers";
+import { computed } from "vue";
+
+defineProps<{ details: DetailsType }>();
+
+const { platform } = storeToRefs(useScreenStore());
+
+const screenWidth = computed(() => {
+  if (platform.value === "desktop") {
+    return 720;
+  } else if (platform.value === "laptop") {
+    return 600;
+  }
 });
 </script>
 
 <template>
-  <div class="product_details">
-    <a-flex justify="space-between" align="center" v-if="!props.reverse">
-      <p class="product_details__description">{{ props.text }}</p>
-      <div class="divider" />
-      <img class="product_details__screenshot" :src="props.image" />
-    </a-flex>
-    <a-flex justify="space-between" align="center" v-else>
-      <img class="product_details__screenshot" :src="props.image" />
-      <div class="divider" />
-      <p class="product_details__description">{{ props.text }}</p>
-    </a-flex>
-  </div>
+  <a-flex
+    :class="['product_details', { reverse: details.reverse }]"
+    justify="space-between"
+    align="center"
+  >
+    <span class="description">
+      {{ details.text }}
+    </span>
+    <div class="screen-container">
+      <a-image :src="details.image" :width="screenWidth" />
+    </div>
+  </a-flex>
 </template>
 
 <style lang="scss" scoped>
 .product_details {
-  &__description {
+  width: 100%;
+  gap: 70px;
+
+  .description {
+    max-width: 550px;
+    font-size: 20px;
     text-align: start;
-    font-size: 1.3vw;
   }
 
-  &__screenshot {
-    width: 55%;
-    border: solid 0.15vw var(--accent-color);
-    border-radius: 1vw;
+  .screen-container {
+    min-width: 720px;
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
   }
 }
 
-.divider {
-  margin-right: 3vw;
+@media (max-width: 1280px) {
+  .product_details {
+    .description {
+      max-width: 440px;
+      font-size: 18px;
+    }
+
+    .screen-container {
+      min-width: 600px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .product_details {
+    flex-direction: column-reverse;
+    gap: 20px;
+
+    .description {
+      max-width: 550px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .screen-container {
+      max-width: 800px;
+      min-width: 450px;
+      border-radius: 10px;
+    }
+
+    &.reverse {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .product_details {
+    .description {
+      max-width: 400px;
+      font-size: 12px;
+    }
+
+    .screen-container {
+      min-width: 280px;
+      border-radius: 8px;
+    }
+  }
 }
 </style>
