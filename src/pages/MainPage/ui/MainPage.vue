@@ -1,5 +1,11 @@
 <script lang="ts" setup>
-import { MainSection, UsefullSection, AdvantageSection } from "@/widgets";
+import {
+  MainSection,
+  UsefullSection,
+  AdvantageSection,
+  CostSection,
+  FormButton,
+} from "@/widgets/MainPageSections";
 </script>
 
 <template>
@@ -14,11 +20,14 @@ import { MainSection, UsefullSection, AdvantageSection } from "@/widgets";
         <UsefullSection />
         <a-divider />
       </a-flex>
-      <a-flex class="advantage-section" vertical>
+      <a-flex class="advantage-section" align="center" vertical>
         <AdvantageSection />
+        <FormButton :btnText="$t.components.buttons.main.tryNow" />
         <a-divider />
       </a-flex>
-      <!-- <a-flex class="cost-section" vertical> </a-flex> -->
+      <a-flex class="cost-section" vertical>
+        <CostSection />
+      </a-flex>
     </a-flex>
   </a-flex>
 </template>
@@ -90,7 +99,8 @@ import { MainSection, UsefullSection, AdvantageSection } from "@/widgets";
 
     .main-section,
     .usefull-section,
-    .advantage-section {
+    .advantage-section,
+    .cost-section {
       gap: 40px;
     }
 

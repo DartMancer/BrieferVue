@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { TextsCombined } from "@/shared/ui";
+import { onMounted, ref } from "vue";
+import { TextsCombined } from "@/shared/ui/Other";
 import { USEFULL_ITEMS } from "../model";
+
+const isImageLoaded = ref<boolean>(false);
+
+onMounted(() => {
+  isImageLoaded.value = true;
+});
 </script>
 
 <template>
@@ -34,6 +41,13 @@ import { USEFULL_ITEMS } from "../model";
   .img {
     max-height: 360px;
     pointer-events: none;
+  }
+
+  .img-placeholder {
+    min-width: 360px;
+    min-height: 360px;
+    background: var(--background-color);
+    background-color: var(--background-color);
   }
 
   &.reverse {

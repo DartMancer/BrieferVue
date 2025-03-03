@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { BlockTitle } from "@/shared/ui";
-import { RADIO_LIST_LOOKS } from "@/shared/constants";
+// import { ref, watch } from "vue";
+// import { BlockTitle } from "@/widgets/BlockSettings";
+// import { RADIO_LIST_LOOKS } from "@/shared/constants";
 // import DropDownArrowIcon from "@/assets/icons/DropDownArrowIcon.vue";
-import { useFormStore } from "@/entities/form";
+// import { useFormStore } from "@/entities/form";
 
 // const props = defineProps<{
 //   modalVisible: boolean;
@@ -39,9 +39,9 @@ import { useFormStore } from "@/entities/form";
 
 <template>
   <a-flex class="list-looks-section" vertical>
-    <div>
+    <!-- <div>
       <BlockTitle :title="'Внешний вид'" :subtitle="'Тип отображения'" />
-    </div>
+    </div> -->
     <a-dropdown :placement="'bottom'" :trigger="['click']">
       <a-button class="list-looks-section__button">
         <a-flex justify="space-between" align="center">
@@ -51,9 +51,9 @@ import { useFormStore } from "@/entities/form";
       </a-button>
       <template #overlay>
         <a-menu>
-          <a-menu-item v-for="(vars, index) in RADIO_LIST_LOOKS" :key="index">
-            <!-- <a @click="setVar(vars)">{{ vars }}</a> -->
-          </a-menu-item>
+          <!-- <a-menu-item v-for="(vars, index) in RADIO_LIST_LOOKS" :key="index">
+            <a @click="setVar(vars)">{{ vars }}</a>
+          </a-menu-item> -->
         </a-menu>
       </template>
     </a-dropdown>

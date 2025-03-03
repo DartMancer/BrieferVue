@@ -31,7 +31,7 @@
 .fade-up-enter-from,
 .fade-up-leave-to {
   opacity: 0;
-  transform: translateY(-10px); /* Заголовок поднимается вверх */
+  transform: translateY(-10px);
 }
 
 .fade-up-leave-from,
@@ -44,7 +44,7 @@
 
 .fade-down-enter-active,
 .fade-down-leave-active {
-  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .fade-down-enter-from,

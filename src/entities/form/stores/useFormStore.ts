@@ -4,21 +4,20 @@ import { defineStore } from "pinia";
 import { v4 as uuidv4 } from "uuid";
 
 import { BLOCKS_LIST } from "@/shared/constants";
-import { BlockSettings, BlockType } from "../types";
+import { BlockConfiguration, BlockType } from "../types";
 
 export const useFormStore = defineStore("formDesigner", () => {
-  const formBlocks = ref<BlockSettings[]>([]);
-  const draggedBlock = ref<BlockSettings | null>(null);
-  const tempBlock = ref<BlockSettings | null>(null);
+  const formBlocks = ref<BlockConfiguration[]>([]);
+  const draggedBlock = ref<BlockConfiguration | null>(null);
+  const tempBlock = ref<BlockConfiguration | null>(null);
+  const saveBtnStatus = ref<boolean>(false);
 
   const initialize = () => {
     const savedFormBlocks = sessionStorage.getItem("formBlocks");
-    if (savedFormBlocks) {
-      formBlocks.value = JSON.parse(savedFormBlocks);
-    }
+    if (savedFormBlocks) formBlocks.value = JSON.parse(savedFormBlocks);
   };
 
-  const setDraggedBlock = (block: BlockSettings | null) => {
+  const setDraggedBlock = (block: BlockConfiguration | null) => {
     draggedBlock.value = block;
   };
 
@@ -30,7 +29,6 @@ export const useFormStore = defineStore("formDesigner", () => {
 
     nextTick(() => {
       const lastBlock = document.querySelector(".last-form-block");
-      console.log(lastBlock);
 
       if (lastBlock) {
         lastBlock.scrollIntoView({
@@ -42,10 +40,9 @@ export const useFormStore = defineStore("formDesigner", () => {
     });
   };
 
-  const removeBlock = (index: number) => {
-    setTimeout(() => {
-      formBlocks.value.splice(index, 1);
-    }, 300);
+  const removeBlock = (id: string) => {
+    const index = formBlocks.value.findIndex((block) => block.id === id);
+    if (index !== -1) formBlocks.value.splice(index, 1);
   };
 
   const removeBlocks = () => {
@@ -53,14 +50,15 @@ export const useFormStore = defineStore("formDesigner", () => {
     formBlocks.value = [];
   };
 
-  const setTempBlock = (block: BlockSettings | null) => {
-    // tempBlock.value = block ? { ...block } : null;
+  const setTempBlock = (block: BlockConfiguration | null) => {
     tempBlock.value = block ? JSON.parse(JSON.stringify(block)) : null;
   };
 
-  const saveTempBlock = (index: number) => {
+  const saveTempBlock = (id: string) => {
     if (tempBlock.value) {
-      formBlocks.value[index] = { ...tempBlock.value };
+      const index = formBlocks.value.findIndex((block) => block.id === id);
+      if (index !== -1) formBlocks.value[index] = { ...tempBlock.value };
+      console.log(formBlocks.value);
       clearTempBlock();
     }
   };
@@ -68,6 +66,9 @@ export const useFormStore = defineStore("formDesigner", () => {
   const clearTempBlock = () => {
     tempBlock.value = null;
   };
+
+  const toggleSaveBtnStatus = (status: boolean) =>
+    (saveBtnStatus.value = status);
 
   watch(
     formBlocks,
@@ -81,6 +82,7 @@ export const useFormStore = defineStore("formDesigner", () => {
     formBlocks,
     draggedBlock,
     tempBlock,
+    saveBtnStatus,
     initialize,
     addBlock,
     removeBlock,
@@ -89,5 +91,6 @@ export const useFormStore = defineStore("formDesigner", () => {
     setTempBlock,
     saveTempBlock,
     clearTempBlock,
+    toggleSaveBtnStatus,
   };
 });

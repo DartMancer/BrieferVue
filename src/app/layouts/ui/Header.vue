@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { computed, defineAsyncComponent } from "vue";
 import { storeToRefs } from "pinia";
 import { useScreenStore } from "@/app/providers/store/screen";
-import { computed, defineAsyncComponent } from "vue";
 
 const { platform } = storeToRefs(useScreenStore());
 
@@ -10,10 +10,10 @@ const platforms = {
     () => import("@/widgets/Header/HeaderDesktop.vue")
   ),
   laptop: defineAsyncComponent(
-    () => import("@/widgets/Header/HeaderLaptop.vue")
+    () => import("@/widgets/Header/HeaderDesktop.vue")
   ),
   tablet: defineAsyncComponent(
-    () => import("@/widgets/Header/HeaderTablet.vue")
+    () => import("@/widgets/Header/HeaderMobile.vue")
   ),
   mobile: defineAsyncComponent(
     () => import("@/widgets/Header/HeaderMobile.vue")

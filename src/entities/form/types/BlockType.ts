@@ -1,42 +1,35 @@
-import { BlockSettings, DividerBlock } from "./BlockSettings";
-
 export type BlockType =
-  | "text"
-  | "textarea"
-  | "clear_text"
-  | "radio"
-  | "multiple_select"
-  | "color"
-  | "divider"
-  | "checkbox"
-  | "number"
-  | "contacts"
-  | "links"
-  | "file"
-  | "date";
+  | "TEXT"
+  | "TEXTAREA"
+  | "CLEAR_TEXT"
+  | "RADIO"
+  | "MULTIPLE_SELECT"
+  | "COLOR"
+  | "DIVIDER"
+  | "CHECKBOX"
+  | "NUMBER"
+  | "CONTACTS"
+  | "LINKS"
+  | "FILE"
+  | "DATE";
 
-export type RangeValue = [string, string];
-
-export type RadioLooks = "Плитка" | "В один ряд";
-
-export type DividerLooks = "Текстовый" | "Линия";
-
-export type NumberLooks = "Целое" | "Дробное" | "Промежуток";
-
-export type BlockWithoutDivider = Exclude<BlockSettings, DividerBlock>;
-
-export interface ListVariablesType {
-  value: string;
-  label: string;
+export interface RangeValueType {
+  startDate: string;
+  endDate: string;
+}
+export interface NumbersRangeType {
+  minNumber: number;
+  maxNumber: number;
 }
 
-export interface DatePickerType {
-  isDateRange: boolean;
-  dateRange?: RangeValue;
-  isLimitRange: boolean;
-}
+// export type RadioLooks = "Плитка" | "В один ряд";
 
-export interface FileType {
-  maxSize?: number;
-  maxFiles?: number;
-}
+// export type DividerLooks = "Текстовый" | "Линия";
+
+// export type NumberOptions = "Целое" | "Дробное" | "Промежуток";
+
+export type RadioLooks = "TILE" | "ONE_ROW";
+
+export type DividerLooks = "TEXT" | "LINE";
+
+export type NumberOptions = "INTEGER" | "DECIMAL" | "RANGE";

@@ -1,13 +1,10 @@
-<script setup lang="ts">
-import { FormFooter } from "@/shared/ui";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <a-flex vertical>
     <div class="empty-preview">
       <a-empty />
     </div>
-    <FormFooter />
   </a-flex>
 </template>
 

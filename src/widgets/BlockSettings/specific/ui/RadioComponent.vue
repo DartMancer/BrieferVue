@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-import { AnswersSetting } from "../../common";
-import ListLooksSetting from "./ListLooksSetting.vue";
+// import { AnswersSetting } from "../../common";
+// import ListLooksSetting from "./ListLooksSetting.vue";
 
-const props = defineProps<{
-  modalVisible: boolean;
-  currentIndex: number;
-}>();
+// const props = defineProps<{
+//   modalVisible: boolean;
+//   currentIndex: number;
+// }>();
 </script>
 
 <template>
   <a-flex class="list-looks-section" vertical>
-    <AnswersSetting
+    <!-- <AnswersSetting
       v-model:modalVisible="props.modalVisible"
       :currentIndex="props.currentIndex"
-    />
-    <ListLooksSetting
+    /> -->
+    <!-- <ListLooksSetting
       v-model:modalVisible="props.modalVisible"
       :currentIndex="props.currentIndex"
-    />
+    /> -->
   </a-flex>
 </template>
 

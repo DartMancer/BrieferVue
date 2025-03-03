@@ -50,6 +50,7 @@ onUnmounted(() => {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  min-height: 100vh;
   height: fit-content;
   padding-top: 94px;
   background-color: var(--background-color);
@@ -58,9 +59,11 @@ onUnmounted(() => {
     position: relative;
     width: 100%;
     max-width: 1440px;
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: column;
+    align-items: center;
     padding-bottom: 40px;
 
     .scroll-button {
@@ -78,7 +81,8 @@ onUnmounted(() => {
       min-height: 60px;
       border: 3px solid var(--accent-color);
       border-radius: 50%;
-      background-color: var(--header-background-color);
+      background-color: rgba($color: #000214, $alpha: 0.4);
+      backdrop-filter: blur(10px);
       padding: 0;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
       transition: 0.2s ease-in-out;
@@ -93,10 +97,15 @@ onUnmounted(() => {
       &:hover {
         border-color: var(--hover-accent-color);
         background-color: var(--hover-accent-color);
+        box-shadow: 0 0 15px var(--accent-color);
 
         svg {
           fill: var(--white-color);
         }
+      }
+
+      &:active {
+        transform: scale(0.95);
       }
     }
   }
@@ -110,6 +119,7 @@ onUnmounted(() => {
 
 @media (max-width: 1024px) {
   .main-layout-wrapper {
+    justify-content: flex-start;
     padding-top: 59px;
   }
 }
@@ -117,6 +127,26 @@ onUnmounted(() => {
 @media (max-width: 540px) {
   .main-layout-wrapper {
     padding-top: 74px;
+
+    .main-layout {
+      padding-bottom: 20px;
+
+      .scroll-button {
+        right: 20px;
+        bottom: 20px;
+
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        border-width: 2px;
+
+        svg {
+          max-width: 15px;
+          max-height: 15px;
+        }
+      }
+    }
   }
 }
 </style>

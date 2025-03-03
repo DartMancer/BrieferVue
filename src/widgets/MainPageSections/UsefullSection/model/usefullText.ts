@@ -10,10 +10,10 @@ export const USEFULL_ITEMS = <UsefullItemType[]>[
   {
     content: [
       {
-        text: GlobalTexts.pages.main.freelanceFirst,
+        text: GlobalTexts.pages.main.usefull.freelancerMain,
       },
       {
-        text: GlobalTexts.pages.main.freelanceSecond,
+        text: GlobalTexts.pages.main.usefull.freelancerGoal,
         className: className,
       },
     ],
@@ -22,10 +22,10 @@ export const USEFULL_ITEMS = <UsefullItemType[]>[
   {
     content: [
       {
-        text: GlobalTexts.pages.main.managerFirst,
+        text: GlobalTexts.pages.main.usefull.pmMain,
       },
       {
-        text: GlobalTexts.pages.main.managerSecond,
+        text: GlobalTexts.pages.main.usefull.pmGoal,
         className: className,
       },
     ],
@@ -35,14 +35,14 @@ export const USEFULL_ITEMS = <UsefullItemType[]>[
   {
     content: [
       {
-        text: GlobalTexts.pages.main.studioFirst,
+        text: GlobalTexts.pages.main.usefull.studioMain,
       },
       {
-        text: GlobalTexts.pages.main.studioSecond,
+        text: GlobalTexts.pages.main.usefull.studioGoal,
         className: className,
       },
       {
-        text: GlobalTexts.pages.main.studioThird,
+        text: GlobalTexts.pages.main.usefull.studioTask,
       },
     ],
     img: StudioIcon,

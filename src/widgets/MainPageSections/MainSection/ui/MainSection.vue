@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TextsCombined } from "@/shared/ui";
+import { TextsCombined } from "@/shared/ui/Other";
 import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
 </script>
 
@@ -15,10 +15,10 @@ import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
         <span class="block-title">
           <TextsCombined :texts="TITLE_CHOOSE.content" />
         </span>
-        <span class="subtitle">{{ $t.pages.main.chooseTemplateSubtitle }}</span>
+        <span class="subtitle">{{ $t.pages.main.main.chooseSubtitle }}</span>
         <a-button class="button">
           <span class="button__text">
-            {{ $t.pages.main.chooseTemplateNow }}
+            {{ $t.components.buttons.main.chooseTemplate }}
           </span>
         </a-button>
       </a-flex>
@@ -28,7 +28,7 @@ import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
         </span>
         <a-button class="button">
           <span class="button__text">
-            {{ $t.pages.main.createTemplateNow }}
+            {{ $t.components.buttons.main.createTemplate }}
           </span>
         </a-button>
       </a-flex>
@@ -134,7 +134,7 @@ import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
         }
 
         &:active {
-          transform: scale(0.9);
+          transform: scale(0.97);
         }
       }
 

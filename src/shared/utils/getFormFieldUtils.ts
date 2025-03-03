@@ -4,19 +4,19 @@ import {
   LongTextField,
   RadioFormField,
   CheckBoxListField,
-  DropDownListField,
-  CheckBoxField,
+  // DropDownListField,
+  // CheckBoxField,
   NumbersField,
-  IntegerField,
-  ScaleRatingField,
-  PhoneField,
-  MailField,
+  // IntegerField,
+  // ScaleRatingField,
+  // PhoneField,
+  // MailField,
   UploadFileField,
   CalendarField,
-  ITNField,
+  // ITNField,
   ColorPickerField,
-  LinkField,
-} from "@/widgets";
+  // LinkField,
+} from "@/widgets/FormFields";
 
 export const getFormFieldUtils = (field: string) => {
   switch (field) {

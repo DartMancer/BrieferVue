@@ -1,35 +1,36 @@
+import { OptionType } from "@/shared/types";
 import {
   RadioLooks,
-  ListVariablesType,
-  NumberLooks,
+  NumberOptions,
   DividerLooks,
-  DatePickerType,
-  FileType,
+  NumbersRangeType,
+  RangeValueType,
 } from "./BlockType";
 
 export interface TextBlockSettings {
-  defaultValue?: string;
+  defaultValue: string;
 }
 
 export interface RadioBlockSettings {
   listLooks: RadioLooks;
-  variables: ListVariablesType[];
+  variables: OptionType[];
 }
 
 export interface MultipleSelectSettings {
-  variables: ListVariablesType[];
+  variables: OptionType[];
 }
 
 export interface NumberBlockSettings {
   isNegative: boolean;
-  listLooks: NumberLooks;
-  numbersRange?: [number, number];
-  defaultValue?: string;
+  options: NumberOptions;
+  numbersRange: NumbersRangeType;
+  defaultValue: number | undefined;
+  defaultRange: NumbersRangeType | undefined;
 }
 
-export interface DividerBlockSetting {
+export interface DividerBlockSettings {
   listLooks: DividerLooks;
-  dividerText?: string;
+  dividerText: string;
 }
 
 export interface ContactsBlockSettings {
@@ -38,15 +39,18 @@ export interface ContactsBlockSettings {
 
 export interface LinksBlockSettings {
   maxLinks: number;
-  defaultValue?: string;
+  defaultValue: string;
 }
 
 export interface DateBlockSettings {
-  dateModel: DatePickerType;
+  isDateRange: boolean;
+  dateRange: RangeValueType | undefined;
+  isLimitRange: boolean;
 }
 
 export interface FileBlockSettings {
-  fileModel: FileType;
+  maxSize: number;
+  maxFiles: number;
 }
 
 // type RangeValue = [string, string];

@@ -1,0 +1,74 @@
+<script setup lang="ts">
+import PreviewIcon from "@/assets/icons/Buttons/PreviewIcon.vue";
+</script>
+
+<template>
+  <a-button class="preview-btn">
+    <PreviewIcon />
+    <span class="btn-text">{{ $t.components.buttons.form.preview }}</span>
+  </a-button>
+</template>
+
+<style lang="scss" scoped>
+.preview-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: fit-content;
+
+  .btn-text {
+    font-size: 20px;
+    color: var(--accent-color);
+    transition: 0.3s ease-in-out;
+  }
+
+  svg {
+    max-width: 22px;
+    max-height: 22px;
+    fill: var(--accent-color);
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover {
+    .btn-text {
+      color: var(--white-color);
+    }
+
+    svg {
+      fill: var(--white-color);
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .preview-btn {
+    .btn-text {
+      font-size: 16px;
+    }
+
+    svg {
+      max-width: 18px;
+      max-height: 18px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .preview-btn {
+    .btn-text {
+      font-size: 14px;
+      color: var(--white-color);
+    }
+
+    svg {
+      fill: var(--white-color);
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .preview-btn {
+    justify-content: center;
+  }
+}
+</style>

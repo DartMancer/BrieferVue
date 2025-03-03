@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { UploadFile } from "ant-design-vue";
-import { AppBtn } from "@/shared/ui";
-import UploadIcon from "@/assets/icons/UploadIcon.vue";
-import { BlockSettings } from "@/entities/form";
+// import { ref } from "vue";
+// import { UploadFile } from "ant-design-vue";
+// import { AppBtn } from "@/shared/ui/Buttons";
+// import UploadIcon from "@/assets/icons/UploadIcon.vue";
+// import { BlockConfiguration } from "@/entities/form";
 
-const props = defineProps<{
-  formBlock: BlockSettings;
-  index: number;
-}>();
+// const props = defineProps<{
+//   formBlock: BlockConfiguration;
+//   index: number;
+// }>();
 
-const previewFormState = defineModel<Record<string, any>>("previewFormState", {
-  required: true,
-});
+// const previewFormState = defineModel<Record<string, any>>("previewFormState", {
+//   required: true,
+// });
 
-const key = Object.keys(previewFormState.value!)[props.index];
+// const key = Object.keys(previewFormState.value!)[props.index];
 
-const fileList = ref<UploadFile[]>([]);
+// const fileList = ref<UploadFile[]>([]);
 // const maxFiles = ref<number>(props.formBlock.fileModel?.maxFiles ?? 20);
 // const maxSize = ref<number>(props.formBlock.fileModel?.maxSize ?? 20);
 // const maxSizeBytes = maxSize.value * 1024 * 1024;
@@ -50,15 +50,15 @@ const fileList = ref<UploadFile[]>([]);
 //   input.value = "";
 // };
 
-const customRequest = () => {
-  for (let i = 0; i < fileList.value.length; i++) {
-    fileList.value[i].status = "done";
-  }
-};
+// const customRequest = () => {
+//   for (let i = 0; i < fileList.value.length; i++) {
+//     fileList.value[i].status = "done";
+//   }
+// };
 
-const onChange = () => {
-  previewFormState.value[key] = fileList.value;
-};
+// const onChange = () => {
+//   previewFormState.value[key] = fileList.value;
+// };
 </script>
 
 <template>

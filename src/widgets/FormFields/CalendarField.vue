@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import type { Dayjs } from "dayjs";
-import dayjs from "dayjs";
+// import { ref } from "vue";
+// import type { Dayjs } from "dayjs";
+// import dayjs from "dayjs";
 // import { inputRequiredRule } from "@/shared/model";
-import { BlockSettings } from "@/entities/form";
+// import { BlockConfiguration } from "@/entities/form";
 
-const props = defineProps<{
-  formBlock: BlockSettings;
-  index: number;
-}>();
+// const props = defineProps<{
+//   formBlock: BlockConfiguration;
+//   index: number;
+// }>();
 
-const previewFormState = defineModel<Record<string, any>>("previewFormState", {
-  required: true,
-});
+// const previewFormState = defineModel<Record<string, any>>("previewFormState", {
+//   required: true,
+// });
 
 // const key = Object.keys(previewFormState.value!)[props.index];
 // const rules = inputRequiredRule(props.formBlock);

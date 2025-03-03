@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { AppBtn } from "@/shared/ui";
-import LockIcon from "@/assets/icons/Buttons/LockIcon.vue";
-import UnlockIcon from "@/assets/icons/Buttons/UnlockIcon.vue";
-import CopyIcon from "@/assets/icons/Buttons/CopyIcon.vue";
-import CloseIcon from "@/assets/icons/Other/CloseIcon.vue";
+// import { AppBtn } from "@/shared/ui/Buttons";
+// import LockIcon from "@/assets/icons/Buttons/LockIcon.vue";
+// import UnlockIcon from "@/assets/icons/Buttons/UnlockIcon.vue";
+// import CopyIcon from "@/assets/icons/Buttons/CopyIcon.vue";
+// import CloseIcon from "@/assets/icons/Other/CloseIcon.vue";
 import PlusIcon from "@/assets/icons/Other/PlusIcon.vue";
 import ColorTextButton from "./ColorTextButton.vue";
 
@@ -37,7 +37,7 @@ const emit = defineEmits<{
     gap="middle"
   >
     <a-flex vertical class="color-box__buttons">
-      <AppBtn class="palette-icon-button" @click="emit('copy')">
+      <!-- <AppBtn class="palette-icon-button" @click="emit('copy')">
         <CopyIcon :style="{ fill: backColor }" />
       </AppBtn>
       <AppBtn
@@ -54,7 +54,7 @@ const emit = defineEmits<{
       >
         <LockIcon v-if="locked" :style="{ fill: backColor }" />
         <UnlockIcon v-else :style="{ fill: backColor }" />
-      </AppBtn>
+      </AppBtn> -->
     </a-flex>
     <ColorTextButton
       :color="color"

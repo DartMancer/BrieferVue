@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { BlockTitle } from "@/shared/ui";
-import { getFormFieldUtils } from "@/shared/utils";
-import { commentaryBeforeComp } from "@/shared/constants";
+// import { ref, computed } from "vue";
+// import { BlockTitle } from "@/widgets/BlockSettings";
+// import { getFormFieldUtils } from "@/shared/utils";
+// import { commentaryBeforeComp } from "@/shared/constants";
 // import RequiredIcon from "@/assets/icons/RequiredIcon.vue";
-import { BlockSettings } from "@/entities/form";
+// import { BlockConfiguration } from "@/entities/form";
 
-const props = defineProps<{
-  formBlock: BlockSettings;
-  index: number;
-}>();
+// const props = defineProps<{
+//   formBlock: BlockConfiguration;
+//   index: number;
+// }>();
 
-const previewFormState = defineModel<Record<string, any>>("previewFormState");
+// const previewFormState = defineModel<Record<string, any>>("previewFormState");
 
 // const formBlock = ref(props.formBlock);
 // const title = ref(formBlock.value.generalSettings.title);

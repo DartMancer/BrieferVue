@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // import { useFormStore } from "@/entities/form";
-import { ref } from "vue";
-import { BlockSettings } from "@/entities/form";
+// import { ref } from "vue";
+import { BlockConfiguration } from "@/entities/form";
 // import { inputRequiredRule } from "@/shared/model";
 
 defineProps<{
-  formBlock: BlockSettings;
+  formBlock: BlockConfiguration;
   index: number;
 }>();
 
@@ -17,19 +17,19 @@ defineProps<{
 // const formBlocks = computed(() => store.formBlocks);
 // const formBlock = ref(formBlocks.value[props.index]);
 
-const selectedItems = ref(new Map<string, string>());
+// const selectedItems = ref(new Map<string, string>());
 
-function selectItems(conditionName: string, variableId: string) {
-  if (isSelected(conditionName, variableId)) {
-    selectedItems.value.delete(conditionName);
-  } else {
-    selectedItems.value.set(conditionName, variableId);
-  }
-}
+// function selectItems(conditionName: string, variableId: string) {
+//   if (isSelected(conditionName, variableId)) {
+//     selectedItems.value.delete(conditionName);
+//   } else {
+//     selectedItems.value.set(conditionName, variableId);
+//   }
+// }
 
-function isSelected(conditionName: string, variableId: string): boolean {
-  return selectedItems.value.get(conditionName) === variableId;
-}
+// function isSelected(conditionName: string, variableId: string): boolean {
+//   return selectedItems.value.get(conditionName) === variableId;
+// }
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BrieferLogo } from "@/shared/ui";
+import { BrieferLogo } from "@/shared/ui/Logo";
 </script>
 
 <template>

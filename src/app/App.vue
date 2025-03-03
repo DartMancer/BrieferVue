@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from "vue";
+
 import ruRU from "ant-design-vue/es/locale/ru_RU";
 import "dayjs/locale/ru";
-import { useLayout } from "./layouts";
+
 import { useScreenStore } from "@/app/providers";
+import { AppLoader } from "@/shared/ui/Other";
+import { useLayout } from "./layouts";
 
 const screenStore = useScreenStore();
 const { layout } = useLayout();
@@ -30,11 +33,17 @@ const theme = ref({
   },
 });
 
+const loading = ref<boolean>(false);
+
 const updatePlatform = () => {
   screenStore.setPlatform(window.innerWidth);
 };
 
 onMounted(() => {
+  loading.value = true;
+  setTimeout(() => {
+    loading.value = false;
+  }, 1000);
   updatePlatform();
   window.addEventListener("resize", updatePlatform);
 });
@@ -47,14 +56,17 @@ onUnmounted(() => {
 <template>
   <a-config-provider :theme="theme" :locale="ruRU">
     <v-app>
-      <a-app>
-        <component :is="layout">
-          <router-view v-slot="{ Component }">
-            <transition name="fade" mode="out-in">
-              <component :is="Component" />
-            </transition>
-          </router-view>
-        </component>
+      <a-app class="app">
+        <Transition name="fade" mode="out-in">
+          <component v-if="!loading" :is="layout">
+            <router-view v-slot="{ Component }">
+              <Transition name="fade" mode="out-in">
+                <component :is="Component" />
+              </Transition>
+            </router-view>
+          </component>
+          <AppLoader v-else />
+        </Transition>
       </a-app>
     </v-app>
   </a-config-provider>
@@ -65,4 +77,8 @@ onUnmounted(() => {
 @import url("./style/style.scss");
 @import url("./style/vars.scss");
 @import url("./style/transition.scss");
+
+.app {
+  background-color: var(--background-color);
+}
 </style>
