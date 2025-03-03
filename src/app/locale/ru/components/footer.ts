@@ -1,8 +1,12 @@
 export const TextsFooter = {
+  subtitle: "Сайт-генератор технического задания",
   letsStart: "Начнем",
   create: "Создать анкету",
   chooseTemplate: "Выбрать шаблон",
+  privacy: "Политика конфиденциальности",
+  offer: "Договор оферты",
   aboutUs: "О нас",
+  documents: "Документы",
   products: "Продукты",
   contacts: "Контакты",
   companyFirst: "КОМПАНИЯ: ",

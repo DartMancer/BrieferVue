@@ -4,12 +4,12 @@ export const TextsListLooks = {
     row: "В один ряд",
   },
   divider: {
-    line: "Плитка",
-    text: "В один ряд",
+    line: "Линия",
+    text: "Текстовый",
   },
   numbers: {
     int: "Целое",
-    double: "Дробное",
+    decimal: "Дробное",
     range: "Промежуток",
   },
 };

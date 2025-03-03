@@ -8,29 +8,29 @@ export const advantagesBlocks = <AdvantagesBlocksType[][]>[
     {
       content: [
         {
-          text: GlobalTexts.pages.main.endlessCallsFirst,
+          text: GlobalTexts.pages.main.advantages.endlessCallsMain,
           className: className,
         },
-        { text: GlobalTexts.pages.main.endlessCallsSecond },
+        { text: GlobalTexts.pages.main.advantages.endlessCallsExtra },
       ],
       without: true,
     },
     {
       content: [
         {
-          text: GlobalTexts.pages.main.readyTemplateFirst,
+          text: GlobalTexts.pages.main.advantages.readyTemplatesMain,
           className: className,
         },
-        { text: GlobalTexts.pages.main.readyTemplateSecond },
+        { text: GlobalTexts.pages.main.advantages.readyTemplatesExtra },
       ],
     },
   ],
   [
     {
       content: [
-        { text: GlobalTexts.pages.main.createDocumentFirst },
+        { text: GlobalTexts.pages.main.advantages.createDocMain },
         {
-          text: GlobalTexts.pages.main.createDocumentSecond,
+          text: GlobalTexts.pages.main.advantages.createDocExtra,
           className: className,
         },
       ],
@@ -39,19 +39,19 @@ export const advantagesBlocks = <AdvantagesBlocksType[][]>[
     {
       content: [
         {
-          text: GlobalTexts.pages.main.generateDocumentFirst,
+          text: GlobalTexts.pages.main.advantages.docGenMain,
           className: className,
         },
-        { text: GlobalTexts.pages.main.generateDocumentSecond },
+        { text: GlobalTexts.pages.main.advantages.docGenFormat },
       ],
     },
   ],
   [
     {
       content: [
-        { text: GlobalTexts.pages.main.beautifullSiteFirst },
+        { text: GlobalTexts.pages.main.advantages.beautySiteMain },
         {
-          text: GlobalTexts.pages.main.beautifullSiteSecond,
+          text: GlobalTexts.pages.main.advantages.beautySiteExtra,
           className: className,
         },
       ],
@@ -59,12 +59,12 @@ export const advantagesBlocks = <AdvantagesBlocksType[][]>[
     },
     {
       content: [
-        { text: GlobalTexts.pages.main.clientChooseFirst },
+        { text: GlobalTexts.pages.main.advantages.styleChoiceMain },
         {
-          text: GlobalTexts.pages.main.clientChooseSecond,
+          text: GlobalTexts.pages.main.advantages.styleChoiceFreedom,
           className: className,
         },
-        { text: GlobalTexts.pages.main.clientChooseThird },
+        { text: GlobalTexts.pages.main.advantages.styleChoicePreference },
       ],
     },
   ],
@@ -72,18 +72,21 @@ export const advantagesBlocks = <AdvantagesBlocksType[][]>[
     {
       content: [
         {
-          text: GlobalTexts.pages.main.customersLossFirst,
+          text: GlobalTexts.pages.main.advantages.customersLossMain,
           className: className,
         },
-        { text: GlobalTexts.pages.main.customersLossSecond },
+        { text: GlobalTexts.pages.main.advantages.customersLossReason },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.pages.main.newRequestFirst },
-        { text: GlobalTexts.pages.main.newRequestSecond, className: className },
-        { text: GlobalTexts.pages.main.newRequestThird },
+        { text: GlobalTexts.pages.main.advantages.newRequestMain },
+        {
+          text: GlobalTexts.pages.main.advantages.newRequestAction,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.advantages.newRequestPrompt },
       ],
     },
   ],
