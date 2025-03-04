@@ -2,13 +2,13 @@
 import { ref, computed } from "vue";
 import { NotificationPlacement, notification } from "ant-design-vue";
 import { copyToClipboard } from "@/shared/utils";
-import { BlockSettings } from "@/entities/form";
+import { BlockConfiguration } from "@/entities/form";
 import { generateColorPalette, getTextColorForBackground } from "../model";
 import PalleteItem from "./PalleteItem.vue";
 import GenerateButton from "./GenerateButton.vue";
 
 const props = defineProps<{
-  formBlock: BlockSettings;
+  formBlock: BlockConfiguration;
   index: number;
 }>();
 

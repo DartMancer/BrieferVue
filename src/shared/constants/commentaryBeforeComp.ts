@@ -1,9 +1,8 @@
 import { GlobalTexts as t } from "@/app/locale/ru";
 
 export const commentaryBeforeComp = [
-  t.icons.radioIcon,
-  t.icons.checkBoxIcon,
-  t.icons.scaleRatingIcon,
-  t.icons.fileIcon,
-  t.icons.colorIcon,
+  t.blocks.icons.radioIcon,
+  t.blocks.icons.checkBoxIcon,
+  t.blocks.icons.fileIcon,
+  t.blocks.icons.colorIcon,
 ];

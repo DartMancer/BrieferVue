@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { inputRequiredRule } from "@/shared/model";
-import { BlockSettings } from "@/entities/form";
+// import { ref } from "vue";
+// import { inputRequiredRule } from "@/shared/model";
+// import { BlockSettings } from "@/entities/form";
 
-const props = defineProps<{
-  formBlock: BlockSettings;
-  index: number;
-}>();
+// const props = defineProps<{
+//   formBlock: BlockSettings;
+//   index: number;
+// }>();
 
-const previewFormState = defineModel<Record<string, any>>("previewFormState");
+// const previewFormState = defineModel<Record<string, any>>("previewFormState");
 
-const key = Object.keys(previewFormState.value!)[props.index];
-const rules = inputRequiredRule(props.formBlock);
+// const key = Object.keys(previewFormState.value!)[props.index];
+// const rules = inputRequiredRule(props.formBlock);
 
-const listLooks = ref(props.formBlock.variables![0].value);
+// const listLooks = ref(props.formBlock.variables![0].value);
 
-function setVar(value: string) {
-  listLooks.value = value;
-}
+// function setVar(value: string) {
+//   listLooks.value = value;
+// }
 </script>
 
 <template>
-  <a-form-item :name="key" :rules="rules" v-if="previewFormState">
+  <!-- <a-form-item :name="key" :rules="rules" v-if="previewFormState">
     <a-flex class="list-looks-section" vertical>
       <a-select
         class="list-looks-section__button"
@@ -36,7 +36,7 @@ function setVar(value: string) {
         </a-select-option>
       </a-select>
     </a-flex>
-  </a-form-item>
+  </a-form-item> -->
 </template>
 
 <style lang="scss" scoped>

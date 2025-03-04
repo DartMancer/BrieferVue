@@ -1,41 +1,41 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import IMask from "imask";
-import { inputRequiredRule } from "@/shared/model";
-import ClearFiledIcon from "@/assets/icons/ClearFiledIcon.vue";
-import { BlockSettings } from "@/entities/form";
+// import { ref, onMounted } from "vue";
+// import IMask from "imask";
+// import { inputRequiredRule } from "@/shared/model";
+// import ClearFiledIcon from "@/assets/icons/ClearFiledIcon.vue";
+// import { BlockSettings } from "@/entities/form";
 
-const props = defineProps<{
-  formBlock: BlockSettings;
-  index: number;
-}>();
+// const props = defineProps<{
+//   formBlock: BlockSettings;
+//   index: number;
+// }>();
 
-const previewFormState = defineModel<Record<string, any>>("previewFormState", {
-  required: true,
-});
+// const previewFormState = defineModel<Record<string, any>>("previewFormState", {
+//   required: true,
+// });
 
-const key = Object.keys(previewFormState.value!)[props.index];
-const rules = inputRequiredRule(props.formBlock);
+// const key = Object.keys(previewFormState.value!)[props.index];
+// const rules = inputRequiredRule(props.formBlock);
 
-const inputRef = ref<HTMLElement | null>(null);
-const showIcon = ref(false);
+// const inputRef = ref<HTMLElement | null>(null);
+// const showIcon = ref(false);
 
-function clearInput() {
-  previewFormState.value[key] = "";
-  showIcon.value = false;
-}
+// function clearInput() {
+//   previewFormState.value[key] = "";
+//   showIcon.value = false;
+// }
 
-onMounted(() => {
-  if (inputRef.value) {
-    IMask(inputRef.value as HTMLInputElement, {
-      mask: "+7 (000) 000-00-00",
-    });
-  }
-});
+// onMounted(() => {
+//   if (inputRef.value) {
+//     IMask(inputRef.value as HTMLInputElement, {
+//       mask: "+7 (000) 000-00-00",
+//     });
+//   }
+// });
 </script>
 
 <template>
-  <div class="input-wrapper" v-if="previewFormState">
+  <!-- <div class="input-wrapper" v-if="previewFormState">
     <a-form-item :name="key" :rules="rules">
       <input
         class="phone-input"
@@ -53,7 +53,7 @@ onMounted(() => {
         <ClearFiledIcon />
       </span>
     </a-form-item>
-  </div>
+  </div> -->
 </template>
 
 <style lang="scss" scoped>

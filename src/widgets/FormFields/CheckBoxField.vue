@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { BlockSettings } from "@/entities/form";
-import { inputRequiredRule } from "@/shared/model";
-const props = defineProps<{
-  formBlock: BlockSettings;
-  index: number;
-}>();
+// import { BlockSettings } from "@/entities/form";
+// import { inputRequiredRule } from "@/shared/model";
+// const props = defineProps<{
+//   formBlock: BlockSettings;
+//   index: number;
+// }>();
 
-const previewFormState = defineModel<Record<string, any>>("previewFormState");
+// const previewFormState = defineModel<Record<string, any>>("previewFormState");
 
-const key = Object.keys(previewFormState.value!)[props.index];
-const rules = inputRequiredRule(props.formBlock);
+// const key = Object.keys(previewFormState.value!)[props.index];
+// const rules = inputRequiredRule(props.formBlock);
 </script>
 
 <template>
-  <a-form-item :name="key" :rules="rules" v-if="previewFormState">
+  <!-- <a-form-item :name="key" :rules="rules" v-if="previewFormState">
     <div class="check-box-block">
       <a-checkbox v-model:checked="previewFormState[key]">
         {{ formBlock.generalSettings.title }}
       </a-checkbox>
     </div>
-  </a-form-item>
+  </a-form-item> -->
 </template>
 
 <style lang="scss" scoped>

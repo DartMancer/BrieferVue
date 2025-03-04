@@ -5,22 +5,20 @@ import UsefullItems from "./UsefullItems.vue";
 
 <template>
   <a-flex justify="center">
-    <SectionTitle :title="$t.main.usefullTitle" />
+    <SectionTitle :title="$t.pages.main.usefull.usefulFor" />
   </a-flex>
 
-  <a-flex class="items" vertical>
+  <a-flex class="items">
     <UsefullItems />
   </a-flex>
 </template>
 
 <style lang="scss" scoped>
-@media (max-width: 1024px) {
-  .items {
-    display: grid;
-    gap: 50px;
-    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  }
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
 }
 </style>

@@ -1,27 +1,43 @@
 <script lang="ts" setup>
-import { onMounted } from "vue";
-import { useFormStore } from "@/entities/form";
-import BlocksList from "./BlocksList";
-import DesignerSection from "./DesignerSection";
+import { computed, defineAsyncComponent, onMounted, ref } from "vue";
 
+import { storeToRefs } from "pinia";
+
+import { useScreenStore } from "@/app/providers";
+import { useFormStore } from "@/entities/form";
+
+const { platform } = storeToRefs(useScreenStore());
 const { initialize } = useFormStore();
 
-onMounted(() => {
-  initialize();
+const platforms = {
+  desktop: defineAsyncComponent(
+    () =>
+      import("@/widgets/FormDesigner/ui/Responsive/FormDesignerPageDesktop.vue")
+  ),
+  laptop: defineAsyncComponent(
+    () =>
+      import("@/widgets/FormDesigner/ui/Responsive/FormDesignerPageDesktop.vue")
+  ),
+  tablet: defineAsyncComponent(
+    () =>
+      import("@/widgets/FormDesigner/ui/Responsive/FormDesignerPageTablet.vue")
+  ),
+  mobile: defineAsyncComponent(
+    () =>
+      import("@/widgets/FormDesigner/ui/Responsive/FormDesignerPageMobile.vue")
+  ),
+};
+
+const listVisible = ref<boolean>(false);
+
+const currentPlatform = computed(() => {
+  const platformName = platform.value;
+  return platforms[platformName] ?? platforms.desktop;
 });
+
+onMounted(() => initialize());
 </script>
 
 <template>
-  <a-flex class="form-designer-section">
-    <BlocksList />
-    <DesignerSection />
-  </a-flex>
+  <component :is="currentPlatform" v-model:listVisible="listVisible" />
 </template>
-
-<style scoped lang="scss">
-.form-designer-section {
-  width: 100%;
-  padding: 75px 52px;
-  gap: 30px;
-}
-</style>

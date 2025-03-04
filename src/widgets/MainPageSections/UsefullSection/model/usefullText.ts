@@ -6,14 +6,14 @@ import { UsefullItemType } from "./UsefullItemType";
 
 const className = "accent";
 
-export const usefullItems = <UsefullItemType[]>[
+export const USEFULL_ITEMS = <UsefullItemType[]>[
   {
     content: [
       {
-        text: GlobalTexts.main.freelanceFirst,
+        text: GlobalTexts.pages.main.usefull.freelancerMain,
       },
       {
-        text: GlobalTexts.main.freelanceSecond,
+        text: GlobalTexts.pages.main.usefull.freelancerGoal,
         className: className,
       },
     ],
@@ -22,10 +22,10 @@ export const usefullItems = <UsefullItemType[]>[
   {
     content: [
       {
-        text: GlobalTexts.main.managerFirst,
+        text: GlobalTexts.pages.main.usefull.pmMain,
       },
       {
-        text: GlobalTexts.main.managerSecond,
+        text: GlobalTexts.pages.main.usefull.pmGoal,
         className: className,
       },
     ],
@@ -35,14 +35,14 @@ export const usefullItems = <UsefullItemType[]>[
   {
     content: [
       {
-        text: GlobalTexts.main.studioFirst,
+        text: GlobalTexts.pages.main.usefull.studioMain,
       },
       {
-        text: GlobalTexts.main.studioSecond,
+        text: GlobalTexts.pages.main.usefull.studioGoal,
         className: className,
       },
       {
-        text: GlobalTexts.main.studioThird,
+        text: GlobalTexts.pages.main.usefull.studioTask,
       },
     ],
     img: StudioIcon,

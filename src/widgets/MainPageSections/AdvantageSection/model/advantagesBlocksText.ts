@@ -7,62 +7,86 @@ export const advantagesBlocks = <AdvantagesBlocksType[][]>[
   [
     {
       content: [
-        { text: GlobalTexts.main.endlessCallsFirst, className: className },
-        { text: GlobalTexts.main.endlessCallsSecond },
+        {
+          text: GlobalTexts.pages.main.advantages.endlessCallsMain,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.advantages.endlessCallsExtra },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.main.readyTemplateFirst, className: className },
-        { text: GlobalTexts.main.readyTemplateSecond },
+        {
+          text: GlobalTexts.pages.main.advantages.readyTemplatesMain,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.advantages.readyTemplatesExtra },
       ],
     },
   ],
   [
     {
       content: [
-        { text: GlobalTexts.main.createDocumentFirst },
-        { text: GlobalTexts.main.createDocumentSecond, className: className },
+        { text: GlobalTexts.pages.main.advantages.createDocMain },
+        {
+          text: GlobalTexts.pages.main.advantages.createDocExtra,
+          className: className,
+        },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.main.generateDocumentFirst, className: className },
-        { text: GlobalTexts.main.generateDocumentSecond },
+        {
+          text: GlobalTexts.pages.main.advantages.docGenMain,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.advantages.docGenFormat },
       ],
     },
   ],
   [
     {
       content: [
-        { text: GlobalTexts.main.beautifullSiteFirst },
-        { text: GlobalTexts.main.beautifullSiteSecond, className: className },
+        { text: GlobalTexts.pages.main.advantages.beautySiteMain },
+        {
+          text: GlobalTexts.pages.main.advantages.beautySiteExtra,
+          className: className,
+        },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.main.clientChooseFirst },
-        { text: GlobalTexts.main.clientChooseSecond, className: className },
-        { text: GlobalTexts.main.clientChooseThird },
+        { text: GlobalTexts.pages.main.advantages.styleChoiceMain },
+        {
+          text: GlobalTexts.pages.main.advantages.styleChoiceFreedom,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.advantages.styleChoicePreference },
       ],
     },
   ],
   [
     {
       content: [
-        { text: GlobalTexts.main.customersLossFirst, className: className },
-        { text: GlobalTexts.main.customersLossSecond },
+        {
+          text: GlobalTexts.pages.main.advantages.customersLossMain,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.advantages.customersLossReason },
       ],
       without: true,
     },
     {
       content: [
-        { text: GlobalTexts.main.newRequestFirst },
-        { text: GlobalTexts.main.newRequestSecond, className: className },
-        { text: GlobalTexts.main.newRequestThird },
+        { text: GlobalTexts.pages.main.advantages.newRequestMain },
+        {
+          text: GlobalTexts.pages.main.advantages.newRequestAction,
+          className: className,
+        },
+        { text: GlobalTexts.pages.main.advantages.newRequestPrompt },
       ],
     },
   ],

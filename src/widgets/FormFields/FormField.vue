@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { BlockTitle } from "@/shared/ui";
-import { getFormFieldUtils } from "@/shared/utils";
-import { commentaryBeforeComp } from "@/shared/constants";
-import RequiredIcon from "@/assets/icons/RequiredIcon.vue";
-import { BlockSettings } from "@/entities/form";
+// import { ref, computed } from "vue";
+// import { BlockTitle } from "@/widgets/BlockSettings";
+// import { getFormFieldUtils } from "@/shared/utils";
+// import { commentaryBeforeComp } from "@/shared/constants";
+// import RequiredIcon from "@/assets/icons/RequiredIcon.vue";
+// import { BlockConfiguration } from "@/entities/form";
 
-const props = defineProps<{
-  formBlock: BlockSettings;
-  index: number;
-}>();
+// const props = defineProps<{
+//   formBlock: BlockConfiguration;
+//   index: number;
+// }>();
 
-const previewFormState = defineModel<Record<string, any>>("previewFormState");
+// const previewFormState = defineModel<Record<string, any>>("previewFormState");
 
-const formBlock = ref(props.formBlock);
-const title = ref(formBlock.value.generalSettings.title);
-const icon = ref(formBlock.value.generalSettings.icon);
-const commentary = ref(formBlock.value.commentary);
+// const formBlock = ref(props.formBlock);
+// const title = ref(formBlock.value.generalSettings.title);
+// const icon = ref(formBlock.value.generalSettings.icon);
+// const commentary = ref(formBlock.value.commentary);
 
-const isCommentaryBefore = computed(() =>
-  commentaryBeforeComp.includes(icon.value)
-);
+// const isCommentaryBefore = computed(() =>
+//   commentaryBeforeComp.includes(icon.value)
+// );
 </script>
 
 <template>
-  <a-flex v-if="previewFormState" class="form-field" vertical gap="small">
+  <!-- <a-flex v-if="previewFormState" class="form-field" vertical gap="small">
     <a-flex :style="{ marginBottom: '1vw' }" vertical>
       <a-flex gap="small" align="top">
         <BlockTitle
@@ -50,7 +50,7 @@ const isCommentaryBefore = computed(() =>
     <p v-if="!isCommentaryBefore && commentary" class="form-field__commentary">
       {{ commentary }}
     </p>
-  </a-flex>
+  </a-flex> -->
 </template>
 
 <style lang="scss" scoped>

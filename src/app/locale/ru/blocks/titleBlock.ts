@@ -1,0 +1,15 @@
+export const TextsBlocksTitle = {
+  shortText: "Короткий текст",
+  longText: "Длинный текст",
+  clearText: "Текст без вопроса",
+  radioText: "Один вариант",
+  multipleSelectText: "Несколько вариантов",
+  colorText: "Цвет",
+  dividerText: "Разделитель",
+  checkIconText: "Да/Нет",
+  numbersText: "Число",
+  contactsText: "Контакты",
+  linkText: "Ссылка",
+  fileText: "Файл",
+  dateText: "Дата",
+};

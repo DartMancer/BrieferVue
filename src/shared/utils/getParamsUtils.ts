@@ -1,23 +1,23 @@
-import GlobalTexts from "@/app/locale";
-import {
-  AnswersSetting,
-  DatePicker,
-  RadioComponent,
-  ScaleRatingComponent,
-} from "@/widgets/BlockSettings";
+// import GlobalTexts from "@/app/locale";
+// import {
+//   // AnswersSetting,
+//   DatePicker,
+//   RadioComponent,
+//   ScaleRatingComponent,
+// } from "@/widgets/BlockSettings";
 
 export const getParamsUtils = (param: string) => {
   switch (param) {
-    case GlobalTexts.icons.checkBoxIcon:
-      return AnswersSetting;
-    case GlobalTexts.icons.dateIcon:
-      return DatePicker;
-    case GlobalTexts.icons.dropDownIcon:
-      return AnswersSetting;
-    case GlobalTexts.icons.radioIcon:
-      return RadioComponent;
-    case GlobalTexts.icons.scaleRatingIcon:
-      return ScaleRatingComponent;
+    // case GlobalTexts.blocks.icons.checkBoxIcon:
+    //   return AnswersSetting;
+    // case GlobalTexts.blocks.icons.dateIcon:
+    //   return DatePicker;
+    // case GlobalTexts.blocks.icons.dropDownIcon:
+    //   return AnswersSetting;
+    // case GlobalTexts.blocks.icons.radioIcon:
+    //   return RadioComponent;
+    // case GlobalTexts.blocks.icons.scaleRatingIcon:
+    //   return ScaleRatingComponent;
     default:
       return null;
   }

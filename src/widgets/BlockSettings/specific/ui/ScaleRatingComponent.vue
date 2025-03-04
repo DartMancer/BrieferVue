@@ -1,28 +1,28 @@
 <script lang="ts" setup>
-import { useFormStore } from "@/entities/form";
-import { AnswersSetting, EditableListSetting } from "../../common";
-const store = useFormStore();
-const props = defineProps<{
-  modalVisible: boolean;
-  currentIndex: number;
-}>();
+// import { useFormStore } from "@/entities/form";
+// import { AnswersSetting, EditableListSetting } from "../../common";
+// const store = useFormStore();
+// const props = defineProps<{
+//   modalVisible: boolean;
+//   currentIndex: number;
+// }>();
 
-const getConditions = () => {
-  return store.tempBlock?.conditions
-    ? store.tempBlock.conditions.map((item) => ({ ...item }))
-    : [];
-};
+// const getConditions = () => {
+//   return store.tempBlock?.conditions
+//     ? store.tempBlock.conditions.map((item) => ({ ...item }))
+//     : [];
+// };
 
-const setConditions = (newList: any[]) => {
-  const block = store.tempBlock;
-  if (block) {
-    block.conditions = newList.map((item) => ({ ...item }));
-  }
-};
+// const setConditions = (newList: any[]) => {
+//   const block = store.tempBlock;
+//   if (block) {
+//     block.conditions = newList.map((item) => ({ ...item }));
+//   }
+// };
 </script>
 
 <template>
-  <a-flex class="condition-section" vertical>
+  <!-- <a-flex class="condition-section" vertical>
     <div>
       <EditableListSetting
         v-model:modalVisible="props.modalVisible"
@@ -36,7 +36,7 @@ const setConditions = (newList: any[]) => {
       v-model:modalVisible="props.modalVisible"
       :currentIndex="props.currentIndex"
     />
-  </a-flex>
+  </a-flex> -->
 </template>
 
 <style lang="css" scoped>

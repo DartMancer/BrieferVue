@@ -4,55 +4,55 @@ import {
   LongTextField,
   RadioFormField,
   CheckBoxListField,
-  DropDownListField,
-  CheckBoxField,
+  // DropDownListField,
+  // CheckBoxField,
   NumbersField,
-  IntegerField,
-  ScaleRatingField,
-  PhoneField,
-  MailField,
+  // IntegerField,
+  // ScaleRatingField,
+  // PhoneField,
+  // MailField,
   UploadFileField,
   CalendarField,
-  ITNField,
+  // ITNField,
   ColorPickerField,
-  LinkField,
-} from "@/widgets";
+  // LinkField,
+} from "@/widgets/FormFields";
 
 export const getFormFieldUtils = (field: string) => {
   switch (field) {
-    case GlobalTexts.icons.shortTextIcon:
+    case GlobalTexts.blocks.icons.shortTextIcon:
       return ShortTextField;
-    case GlobalTexts.icons.longTextIcon:
+    case GlobalTexts.blocks.icons.longTextIcon:
       return LongTextField;
-    case GlobalTexts.icons.clearTextIcon:
+    case GlobalTexts.blocks.icons.clearTextIcon:
       return null;
-    case GlobalTexts.icons.radioIcon:
+    case GlobalTexts.blocks.icons.radioIcon:
       return RadioFormField;
-    case GlobalTexts.icons.checkBoxIcon:
+    case GlobalTexts.blocks.icons.checkBoxIcon:
       return CheckBoxListField;
-    case GlobalTexts.icons.dropDownIcon:
-      return DropDownListField;
-    case GlobalTexts.icons.checkIcon:
-      return CheckBoxField;
-    case GlobalTexts.icons.numbersIcon:
+    // case GlobalTexts.blocks.icons.dropDownIcon:
+    //   return DropDownListField;
+    // case GlobalTexts.blocks.icons.checkIcon:
+    //   return CheckBoxField;
+    case GlobalTexts.blocks.icons.numbersIcon:
       return NumbersField;
-    case GlobalTexts.icons.integerIcon:
-      return IntegerField;
-    case GlobalTexts.icons.scaleRatingIcon:
-      return ScaleRatingField;
-    case GlobalTexts.icons.mailIcon:
-      return MailField;
-    case GlobalTexts.icons.linkIcon:
-      return LinkField;
-    case GlobalTexts.icons.phoneIcon:
-      return PhoneField;
-    case GlobalTexts.icons.fileIcon:
+    // case GlobalTexts.blocks.icons.integerIcon:
+    //   return IntegerField;
+    // case GlobalTexts.blocks.icons.scaleRatingIcon:
+    //   return ScaleRatingField;
+    // case GlobalTexts.blocks.icons.mailIcon:
+    //   return MailField;
+    // case GlobalTexts.blocks.icons.linkIcon:
+    //   return LinkField;
+    // case GlobalTexts.blocks.icons.phoneIcon:
+    //   return PhoneField;
+    case GlobalTexts.blocks.icons.fileIcon:
       return UploadFileField;
-    case GlobalTexts.icons.dateIcon:
+    case GlobalTexts.blocks.icons.dateIcon:
       return CalendarField;
-    case GlobalTexts.icons.innIcon:
-      return ITNField;
-    case GlobalTexts.icons.colorIcon:
+    // case GlobalTexts.blocks.icons.innIcon:
+    //   return ITNField;
+    case GlobalTexts.blocks.icons.colorIcon:
       return ColorPickerField;
     default:
       return null;

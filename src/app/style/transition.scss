@@ -1,3 +1,5 @@
+/*// ? v */
+
 .v-enter-active {
   transition: opacity 0.3s ease;
 }
@@ -6,6 +8,8 @@
 .v-leave-from {
   opacity: 0;
 }
+
+/*// ? fade */
 
 .fade-enter-active,
 .fade-leave-active {
@@ -17,6 +21,8 @@
   opacity: 0;
 }
 
+/*// ? fade-up */
+
 .fade-up-enter-active,
 .fade-up-leave-active {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -25,7 +31,7 @@
 .fade-up-enter-from,
 .fade-up-leave-to {
   opacity: 0;
-  transform: translateY(-10px); /* Заголовок поднимается вверх */
+  transform: translateY(-10px);
 }
 
 .fade-up-leave-from,
@@ -33,6 +39,27 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/*// ? fade-down */
+
+.fade-down-enter-active,
+.fade-down-leave-active {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.fade-down-enter-from,
+.fade-down-leave-to {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.fade-down-leave-from,
+.fade-down-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*// ? show */
 
 .show {
   animation: showIn 0.3s ease both;
@@ -47,6 +74,8 @@
     opacity: 1;
   }
 }
+
+/*// ? list */
 
 .list-container {
   position: relative;
@@ -68,4 +97,78 @@
 .list-leave-active {
   position: absolute;
   width: 100%;
+}
+
+/*// ? rotate-icon */
+
+.rotate-icon-enter-active,
+.rotate-icon-leave-active {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.rotate-icon-enter-from {
+  transform: rotateX(90deg);
+}
+
+.rotate-icon-enter-to {
+  transform: rotateX(0deg);
+}
+
+.rotate-icon-leave-from {
+  transform: rotateX(0deg);
+}
+
+.rotate-icon-leave-to {
+  transform: rotateX(-90deg);
+}
+
+/*// ? popup */
+
+.popup-enter-active,
+.popup-leave-active {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.popup-enter-from,
+.popup-leave-to {
+  opacity: 0;
+  transform: translateY(20px) scale(0.5);
+}
+
+.popup-enter-to,
+.popup-leave-from {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/*// ? pulse */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*// ? shrink */
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.95);
+  }
 }

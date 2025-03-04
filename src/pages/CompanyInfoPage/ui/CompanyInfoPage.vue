@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import ClickIcon from "@/assets/icons/ClickIcon.vue";
+import ClickIcon from "@/assets/icons/Other/ClickIcon.vue";
 import DescriptionBlock from "./DescriptionBlock.vue";
 import CarouselBlock from "./CarouselBlock.vue";
 
@@ -15,7 +15,7 @@ function pushToBrieferPage() {
   <a-flex vertical>
     <div class="develop-products">
       <h2 class="develop-products__title title">
-        {{ $t.companyInfo.developmentProducts }}
+        {{ $t.pages.companyInfo.pageTitle }}
       </h2>
     </div>
     <button @click="pushToBrieferPage" class="product_button">

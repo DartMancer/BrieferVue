@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { TextsCombined } from "@/shared/ui";
+import { TextsCombined } from "@/shared/ui/Other";
 import { advantagesBlocks } from "../model";
 </script>
 
@@ -28,7 +28,7 @@ import { advantagesBlocks } from "../model";
     gap: 30px;
     border: 2px solid var(--success-color);
     border-radius: 12px;
-    background-color: rgba($color: #c0ff8f, $alpha: 0.3);
+    background-color: rgba($color: #c0ff8f, $alpha: 0.2);
 
     .block-number {
       font-family: "Montserrat Alternates";

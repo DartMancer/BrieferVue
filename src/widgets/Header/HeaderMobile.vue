@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { BrieferText } from "@/shared/ui";
-import BrieferLogoIcon from "@/assets/icons/BrieferLogoIcon.vue";
 import { onMounted, onUnmounted, ref } from "vue";
-import BurgerMenuIcon from "@/assets/icons/BurgerMenuIcon.vue";
-import HeaderDrawer from "../Modals/HeaderDrawer.vue";
+import { BrieferText } from "@/shared/ui/Logo";
+import LogoIcon from "@/assets/icons/Other/LogoIcon.vue";
+import BurgerMenuIcon from "@/assets/icons/Buttons/BurgerMenuIcon.vue";
+import { HeaderDrawer } from "@/features/Modals";
 
 const open = ref<boolean>(false);
 
@@ -12,7 +12,7 @@ const showDrawer = () => {
   open.value = true;
 };
 
-const isScrolled = ref(false);
+const isScrolled = ref<boolean>(false);
 
 const handleScroll = () => {
   const scrollThreshold = 75;
@@ -35,10 +35,12 @@ onUnmounted(() => {
     align="center"
   >
     <RouterLink class="logo" to="/">
-      <BrieferLogoIcon class="logo__icon" />
+      <LogoIcon class="logo__icon" />
       <a-flex justify="flex-start" vertical>
         <BrieferText class="logo__title" />
-        <span class="title logo__subtitle">{{ $t.header.subtitle }}</span>
+        <span class="logo__subtitle">
+          {{ $t.components.header.subtitle }}
+        </span>
       </a-flex>
     </RouterLink>
     <a-button class="burger-menu" type="text" @click="showDrawer">
@@ -55,7 +57,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   width: 100%;
-  height: 74px;
+  height: 59px;
   padding: 0 20px;
   background-color: var(--header-background-color);
   border-bottom: solid 1px var(--accent-color);
@@ -79,9 +81,8 @@ onUnmounted(() => {
     }
 
     &__subtitle {
-      max-width: 185px;
       font-size: 10px;
-      max-height: 30px;
+      max-height: 15px;
       opacity: 1;
       transform: translateY(0);
       overflow: hidden;
@@ -94,9 +95,9 @@ onUnmounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
-    padding: 0;
+    width: 40px;
+    height: 40px;
+    padding: 4px 10px;
     border-radius: 50%;
 
     &__icon {
@@ -107,7 +108,7 @@ onUnmounted(() => {
   }
 
   &.scrolled {
-    height: 44px;
+    height: 50px;
 
     .logo {
       &__icon {
@@ -120,6 +121,29 @@ onUnmounted(() => {
         transform: translateY(-10px);
         max-height: 0;
       }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .header {
+    height: 74px;
+
+    .logo {
+      &__subtitle {
+        max-width: 185px;
+        max-height: 30px;
+      }
+    }
+
+    .burger-menu {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+    }
+
+    &.scrolled {
+      height: 44px;
     }
   }
 }

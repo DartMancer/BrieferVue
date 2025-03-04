@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useRoute, useRouter } from "vue-router";
-import { headerItems } from "@/shared/constants";
-import { BrieferText } from "@/shared/ui";
-import BrieferLogoIcon from "@/assets/icons/BrieferLogoIcon.vue";
 import { onMounted, onUnmounted, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { HEADER_ITEMS } from "@/shared/constants";
+import { BrieferText } from "@/shared/ui/Logo";
+import LogoIcon from "@/assets/icons/Other/LogoIcon.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -13,7 +13,7 @@ const navigateTo = (routePath: string) => {
   router.push(routePath);
 };
 
-const isScrolled = ref(false);
+const isScrolled = ref<boolean>(false);
 
 const handleScroll = () => {
   const scrollThreshold = 75;
@@ -36,15 +36,15 @@ onUnmounted(() => {
     align="center"
   >
     <RouterLink class="logo" to="/">
-      <BrieferLogoIcon class="logo__icon" />
+      <LogoIcon class="logo__icon" />
       <a-flex justify="flex-start" vertical>
         <BrieferText class="logo__title" />
-        <span class="logo__subtitle">{{ $t.header.subtitle }}</span>
+        <span class="logo__subtitle">{{ $t.components.header.subtitle }}</span>
       </a-flex>
     </RouterLink>
     <a-flex class="header-items" justify="flex-end">
       <div
-        v-for="(item, idx) in headerItems"
+        v-for="(item, idx) in HEADER_ITEMS"
         :class="['header-item', { active: isActiveRoute(item.path) }]"
         :key="idx"
         align="center"
@@ -145,5 +145,53 @@ onUnmounted(() => {
       }
     }
   }
+}
+
+@media (max-width: 1280px) {
+  .header {
+    height: 75px;
+    padding: 0 20px;
+
+    .logo {
+      &__icon {
+        max-width: 45px;
+        max-height: 45px;
+      }
+
+      &__title {
+        font-size: 22px;
+      }
+
+      &__subtitle {
+        min-width: 240px;
+        font-size: 12px;
+        max-height: 18px;
+      }
+    }
+
+    .header-items {
+      gap: 40px;
+
+      .header-item {
+        &__title {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &.scrolled {
+      height: 64px;
+
+      .logo {
+        &__icon {
+          max-width: 33px;
+          max-height: 33px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
 }
 </style>

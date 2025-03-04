@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AppBtn } from "@/shared/ui";
+// import { AppBtn } from "@/shared/ui/Buttons";
 
 defineProps<{
   index: number;
@@ -7,18 +7,18 @@ defineProps<{
   backColor: string;
 }>();
 
-const emit = defineEmits<{
-  (e: "openColorPicker"): void;
-}>();
+// const emit = defineEmits<{
+//   (e: "openColorPicker"): void;
+// }>();
 </script>
 
 <template>
-  <AppBtn
+  <!-- <AppBtn
     class="color-name"
     :style="{ color: backColor }"
     @click="emit('openColorPicker')"
     >{{ color }}
-  </AppBtn>
+  </AppBtn> -->
 </template>
 
 <style lang="scss" scoped>
