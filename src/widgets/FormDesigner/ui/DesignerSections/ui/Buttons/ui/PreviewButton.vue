@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import PreviewIcon from "@/assets/icons/Buttons/PreviewIcon.vue";
+import { PreviewModal } from "@/features/Modals";
+
+const modalVisible = ref<boolean>(false);
+
+const openModal = () => (modalVisible.value = true);
 </script>
 
 <template>
-  <a-button class="preview-btn">
+  <a-button class="preview-btn" @click="openModal">
     <PreviewIcon />
     <span class="btn-text">{{ $t.components.buttons.form.preview }}</span>
+    <PreviewModal v-model:modalVisible="modalVisible" />
   </a-button>
 </template>
 

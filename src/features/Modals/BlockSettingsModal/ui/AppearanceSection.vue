@@ -43,8 +43,4 @@ const appearanceSettings = computed(() => {
 .appearence-section {
   gap: 10px;
 }
-
-:deep(.ant-form-item) {
-  margin: 0;
-}
 </style>

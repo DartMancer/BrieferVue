@@ -1,15 +1,21 @@
 <script lang="ts" setup>
-import { BlocksListMobile } from "../BlocksList";
+import { BlocksListButton, BlocksListMobile } from "../BlocksList";
 import Buttons from "../DesignerSections/ui/Buttons";
 import EditorSection from "../DesignerSections/ui/EditorSection";
+
+const listVisible = defineModel<boolean>("listVisible", {
+  required: true,
+  default: false,
+});
 </script>
 
 <template>
-  <a-flex class="form-designer-section" vertical>
+  <a-flex class="form-designer-section" :gap="listVisible ? 30 : 15" vertical>
     <a-flex justify="space-between">
-      <BlocksListMobile />
+      <BlocksListButton v-model:listVisible="listVisible" />
       <Buttons />
     </a-flex>
+    <BlocksListMobile v-model:listVisible="listVisible" />
     <EditorSection />
   </a-flex>
 </template>
@@ -18,6 +24,6 @@ import EditorSection from "../DesignerSections/ui/EditorSection";
 .form-designer-section {
   width: 100%;
   padding: 30px;
-  gap: 30px;
+  transition: gap 0.2s ease-in-out;
 }
 </style>

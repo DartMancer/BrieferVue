@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, watch } from "vue";
+import { ComponentPublicInstance, computed, nextTick, ref, watch } from "vue";
 
 import { v4 as uuidv4 } from "uuid";
 import { storeToRefs } from "pinia";
@@ -25,6 +25,8 @@ const dragOptions = computed(() => ({
   ghostClass: "ghost",
 }));
 
+const variablesList = ref<ComponentPublicInstance | null>(null);
+
 const isFirstVariableFilled = computed(
   () => variables.value[0]?.label.trim().length <= 0
 );
@@ -42,6 +44,16 @@ const addVariable = () => {
   };
 
   variables.value.push(variableItem);
+
+  nextTick(() => {
+    const container = variablesList.value?.$el as HTMLElement | null;
+    const inputs = container?.querySelectorAll(".variable-input input");
+    if (inputs?.length) {
+      const lastInput = inputs[inputs.length - 1] as HTMLInputElement;
+      lastInput.focus();
+      lastInput.select();
+    }
+  });
 };
 
 const removeVariable = (id: string) => {
@@ -59,6 +71,7 @@ watch(isFirstVariableFilled, (newStatus) => {
 <template>
   <a-flex class="variables-list-wrapper" vertical>
     <Draggable
+      ref="variablesList"
       class="variables-list"
       v-model="variables"
       v-bind="dragOptions"
@@ -162,10 +175,6 @@ watch(isFirstVariableFilled, (newStatus) => {
             fill: var(--error-color);
           }
         }
-      }
-
-      :deep(.ant-form-item) {
-        margin: 0;
       }
     }
   }

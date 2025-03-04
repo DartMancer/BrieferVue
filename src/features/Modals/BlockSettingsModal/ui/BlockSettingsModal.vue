@@ -56,6 +56,7 @@ const closeModal = () => {
     destroyOnClose
     centered
   >
+    <!-- :width="modalWidth" -->
     <a-form
       v-if="tempBlock"
       class="settings-form"

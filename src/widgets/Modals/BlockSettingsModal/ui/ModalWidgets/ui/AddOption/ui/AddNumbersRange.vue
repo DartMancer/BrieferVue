@@ -62,10 +62,6 @@ onMounted(() => {
   gap: 15px;
 }
 
-:deep(.ant-form-item) {
-  margin: 0;
-}
-
 @media (max-width: 1024px) {
   .title {
     font-size: 18px;

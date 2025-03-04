@@ -149,7 +149,7 @@ export const BLOCKS_LIST = ref<BlockConfiguration[]>([
     requiredField: DEFAULT_REQUIRED_FIELD,
     settings: {
       isDateRange: false,
-      dateRange: { startDate: "", endDate: "" },
+      dateRange: undefined,
       isLimitRange: false,
     },
   },

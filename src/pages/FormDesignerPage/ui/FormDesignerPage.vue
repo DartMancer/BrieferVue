@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, defineAsyncComponent, onMounted } from "vue";
+import { computed, defineAsyncComponent, onMounted, ref } from "vue";
 
 import { storeToRefs } from "pinia";
 
@@ -28,6 +28,8 @@ const platforms = {
   ),
 };
 
+const listVisible = ref<boolean>(false);
+
 const currentPlatform = computed(() => {
   const platformName = platform.value;
   return platforms[platformName] ?? platforms.desktop;
@@ -37,5 +39,5 @@ onMounted(() => initialize());
 </script>
 
 <template>
-  <component :is="currentPlatform" />
+  <component :is="currentPlatform" v-model:listVisible="listVisible" />
 </template>

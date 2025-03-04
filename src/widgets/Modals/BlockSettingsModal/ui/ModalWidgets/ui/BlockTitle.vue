@@ -31,6 +31,7 @@ const props = defineProps<{
       max-width: 18px;
       max-height: 18px;
       fill: var(--accent-color);
+      stroke: var(--accent-color);
     }
 
     .block-title {

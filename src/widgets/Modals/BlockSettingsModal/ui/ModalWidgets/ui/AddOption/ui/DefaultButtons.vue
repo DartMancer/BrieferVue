@@ -7,10 +7,10 @@ import {
   isTextBlockSettings,
 } from "@/shared/model";
 import { BlockConfiguration, NumberBlockSettings } from "@/entities/form";
-import AddTextButton from "./AddTextButton.vue";
 import AddNumberButton from "./AddNumberButton.vue";
 import AddNumbersRange from "./AddNumbersRange.vue";
 import AddLinksButon from "./AddLinksButon.vue";
+import AddTextButton from "./AddTextButton.vue";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {
   required: true,

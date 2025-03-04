@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { TextsCombined } from "@/shared/ui/Other";
+import { GradientBackground, TextsCombined } from "@/shared/ui/Other";
 import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
 </script>
 
 <template>
   <a-flex class="main-section-content">
-    <div class="gradient blue" />
-    <div class="gradient purple" />
-    <div class="gradient pink" />
-    <div class="gradient orange" />
-    <div class="gradient purple-pink" />
+    <GradientBackground />
     <a-flex class="content-block" vertical>
       <a-flex class="block choose" align="center" vertical>
         <span class="block-title">
@@ -40,54 +36,6 @@ import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
 .main-section-content {
   position: relative;
   width: 100%;
-
-  .gradient {
-    position: absolute;
-    border-radius: 30px;
-    filter: blur(60px);
-    z-index: 0;
-
-    &.blue {
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 50%;
-      background: linear-gradient(45deg, #17ead9, #6078ea);
-    }
-
-    &.purple {
-      top: 0;
-      right: 0;
-      width: 55%;
-      height: 50%;
-      background: linear-gradient(45deg, #6094ea, #f02fc2);
-    }
-
-    &.pink {
-      bottom: 0;
-      left: 0;
-      width: 50%;
-      height: 50%;
-      background: linear-gradient(45deg, #f17b41, #e05ba2, #6078ea);
-    }
-
-    &.orange {
-      bottom: 0;
-      right: 0;
-      width: 55%;
-      height: 55%;
-      background: linear-gradient(45deg, #ea5a6f, #de791e, #fccf3a);
-    }
-
-    &.purple-pink {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
-      height: 55%;
-      background: linear-gradient(45deg, #879af2, #d3208b, #fda000);
-    }
-  }
 
   .content-block {
     position: relative;

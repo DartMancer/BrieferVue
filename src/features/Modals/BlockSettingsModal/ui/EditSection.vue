@@ -26,21 +26,19 @@ const sectionVisible = computed(
       :blockTitle="tempBlock.blockTitle"
     />
 
-    <a-flex vertical>
-      <Input
-        v-model:value="tempBlock.question"
-        name="question"
-        :title="$t.components.placeholder.question"
-        :placeholder="$t.components.placeholder.enterQuestion"
-      />
+    <Input
+      v-model:value="tempBlock.question"
+      name="question"
+      :title="$t.components.placeholder.question"
+      :placeholder="$t.components.placeholder.enterQuestion"
+    />
 
-      <AddButtons v-model:tempBlock="tempBlock" />
-    </a-flex>
+    <AddButtons v-model:tempBlock="tempBlock" />
   </a-flex>
 </template>
 
 <style lang="scss" scoped>
 .edit-section {
-  gap: 10px;
+  gap: 20px;
 }
 </style>

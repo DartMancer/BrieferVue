@@ -122,6 +122,7 @@ const emit = defineEmits<{
   .form-btns {
     .form-btn {
       height: 28px;
+      border-width: 1px;
 
       .btn-text {
         font-size: 12px;

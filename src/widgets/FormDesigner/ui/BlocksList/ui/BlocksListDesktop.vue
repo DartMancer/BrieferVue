@@ -34,26 +34,6 @@ const { addBlock } = useFormStore();
     margin-left: 8px;
     color: var(--white-color);
   }
-
-  .block {
-    cursor: pointer;
-    border: solid 2px transparent;
-    border-radius: 6px;
-    padding: 8px;
-    color: white;
-    text-align: center;
-    transition: 0.3s ease;
-  }
-
-  .block {
-    &:hover :deep(.question-icon) {
-      opacity: 1;
-    }
-  }
-
-  .block:hover {
-    border-color: var(--accent-color);
-  }
 }
 
 @media (max-width: 1280px) {

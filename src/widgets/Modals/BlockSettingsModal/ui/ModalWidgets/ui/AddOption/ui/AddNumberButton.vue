@@ -59,8 +59,4 @@ onMounted(() => {
 .option-input {
   width: 100%;
 }
-
-:deep(.ant-form-item) {
-  margin: 0;
-}
 </style>

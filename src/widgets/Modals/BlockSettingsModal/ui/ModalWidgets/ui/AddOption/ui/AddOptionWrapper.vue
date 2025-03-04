@@ -3,14 +3,12 @@ import { ref, h, onMounted } from "vue";
 import PlusIcon from "@/assets/icons/Other/PlusIcon.vue";
 
 const optionVisible = defineModel<boolean>("optionVisible", { required: true });
-defineProps<{ btnText: string; rules?: any }>();
+defineProps<{ btnText: string }>();
 
 const emit = defineEmits<{ (e: "clear", close?: boolean): void }>();
 const hasMounted = ref<boolean>(false);
 
-onMounted(() => {
-  hasMounted.value = true;
-});
+onMounted(() => (hasMounted.value = true));
 </script>
 
 <template>
@@ -23,11 +21,11 @@ onMounted(() => {
       v-if="optionVisible"
       class="option-open"
       justify="space-between"
-      align="end"
+      align="start"
     >
       <slot />
       <a-button
-        :class="['edit-btn', { rules: rules }]"
+        :class="['edit-btn', { open: optionVisible }]"
         type="text"
         @click="emit('clear', true)"
       >
@@ -61,7 +59,7 @@ onMounted(() => {
   align-items: center;
   gap: 10px;
   height: fit-content;
-  padding: 8px;
+  padding: 9px 8px 8px 8px;
   border: 2px solid var(--primary-color);
   border-radius: 8px;
 
@@ -74,8 +72,8 @@ onMounted(() => {
     max-height: 14px;
   }
 
-  &.rules {
-    margin-bottom: 24px;
+  &.open {
+    margin-top: 40px;
   }
 
   &:hover {
@@ -84,9 +82,14 @@ onMounted(() => {
 }
 
 @media (max-width: 1024px) {
+  .option-open {
+    flex-direction: column;
+  }
+
   .edit-btn {
-    height: 38px;
-    padding: 0 8px;
+    width: 100%;
+    justify-content: center;
+    height: 39px;
 
     .btn-text {
       font-size: 12px;
@@ -96,17 +99,15 @@ onMounted(() => {
       max-width: 14px;
       max-height: 14px;
     }
+
+    &.open {
+      margin-top: 0;
+    }
   }
 }
 
 @media (max-width: 540px) {
-  .option-open {
-    flex-direction: column;
-  }
-
   .edit-btn {
-    width: 100%;
-    justify-content: center;
     height: 36px;
     border-width: 1px;
 

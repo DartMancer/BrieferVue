@@ -47,7 +47,7 @@ onMounted(() => (optionVisible.value = !!linkValue.value));
   >
     <Input
       v-model:value="filteredValue"
-      :class="['option-input', { rules: !rules }]"
+      class="option-input"
       :name="name"
       :title="subtitle"
       :placeholder="$t.components.placeholder.enterLink"
@@ -63,11 +63,5 @@ onMounted(() => (optionVisible.value = !!linkValue.value));
 <style lang="scss" scoped>
 .option-input {
   width: 100%;
-
-  &.rules {
-    :deep(.ant-form-item) {
-      margin: 0;
-    }
-  }
 }
 </style>

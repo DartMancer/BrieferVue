@@ -14,8 +14,8 @@ export type BlockType =
   | "DATE";
 
 export interface RangeValueType {
-  startDate: string;
-  endDate: string;
+  startDate: string | undefined;
+  endDate: string | undefined;
 }
 export interface NumbersRangeType {
   minNumber: number;
