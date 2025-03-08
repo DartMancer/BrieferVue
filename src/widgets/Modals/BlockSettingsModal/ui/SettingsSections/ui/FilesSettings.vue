@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { isFileBlockSettings } from "@/shared/model";
 import { BlockConfiguration, FileBlockSettings } from "@/entities/form";
 import { filesRules } from "@/features/Modals/BlockSettingsModal";
-import { NumberInput } from "@/widgets/Modals/BlockSettingsModal";
+import { NumberInput } from "@/widgets/Modals/ModalFields";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {
   required: true,

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { BlockConfiguration } from "@/entities/form";
+import { computed } from "vue";
 import { getModalSections, getModalSettings } from "@/shared/utils";
+import { BlockConfiguration } from "@/entities/form";
 import {
   BlockTitle,
-  Checkbox,
   ContactsSettings,
   DateSettings,
   DividerSettings,
@@ -11,7 +11,7 @@ import {
   LinksSettings,
   NumberSettings,
 } from "@/widgets/Modals/BlockSettingsModal";
-import { computed } from "vue";
+import { Checkbox } from "@/widgets/Modals/ModalFields";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {
   required: true,
@@ -28,7 +28,7 @@ const settingsVisible = computed(() =>
 
 <template>
   <a-flex
-    v-if="sectionVisible || settingsVisible.isDivider"
+    v-if="(sectionVisible && !tempBlock.isSpecial) || settingsVisible.isDivider"
     class="settings-section"
     vertical
   >
@@ -36,7 +36,7 @@ const settingsVisible = computed(() =>
 
     <a-flex :gap="20" vertical>
       <Checkbox
-        v-if="settingsVisible.isRequired"
+        v-if="!tempBlock.isSpecial"
         v-model:checked="tempBlock.requiredField"
         name="requiredField"
         :label="$t.components.buttons.block.requiredQuestion"

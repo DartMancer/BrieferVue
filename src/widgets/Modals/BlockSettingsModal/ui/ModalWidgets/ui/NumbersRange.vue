@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, watch } from "vue";
 import { NumbersRangeType } from "@/entities/form";
-import { NumberInput } from "@/widgets/Modals/BlockSettingsModal";
+import { NumberInput } from "@/widgets/Modals/ModalFields";
 
 const numbersRange = defineModel<NumbersRangeType>("numbersRange", {
   required: true,

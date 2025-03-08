@@ -2,6 +2,12 @@
   .ant-divider {
     margin: 0;
     border-color: var(--accent-color);
+
+    &::after,
+    &::before {
+      border-color: var(--accent-color);
+      transform: translateY(0);
+    }
   }
 
   //!Input
@@ -38,6 +44,10 @@
     &.ant-input-affix-wrapper-focused {
       border-color: var(--hover-accent-color);
       box-shadow: 0 0 10px var(--accent-color);
+    }
+
+    &.ant-input-affix-wrapper-status-error {
+      border-color: #ff7c7c !important;
     }
   }
 
@@ -82,7 +92,7 @@
       }
     }
 
-    &:hover {
+    &:hover:not(.ant-input-affix-wrapper-status-error) {
       border-color: var(--hover-accent-color) !important;
     }
 
@@ -219,6 +229,40 @@
         background-color: var(--opacity-accent-color);
       }
     }
+  }
+
+  //!Radio
+
+  .ant-radio-wrapper {
+    .ant-radio-inner {
+      width: 24px;
+      height: 24px;
+      border-width: 2px;
+      background-color: transparent !important;
+
+      &::after {
+        width: 12px;
+        height: 12px;
+        margin-block-start: -6px;
+        margin-inline-start: -6px;
+        background-color: var(--primary-color);
+        transform: scale(1) !important;
+      }
+    }
+
+    &:hover:not(.ant-radio-wrapper-checked) .ant-radio-inner {
+      border-color: var(--hover-primary-color) !important;
+    }
+
+    & span {
+      padding: 0;
+    }
+  }
+
+  .ant-radio-wrapper-checked {
+    cursor: auto;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 20px rgba($color: #cf4d9c, $alpha: 0.7);
   }
 
   //!DateRange
@@ -413,9 +457,13 @@
             border-radius: 14px;
             background-color: rgba($color: #000214, $alpha: 0.6);
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px var(--accent-color);
+            box-shadow: 0 0 20px var(--hover-accent-color);
           }
         }
+      }
+
+      .ant-modal[aria-hidden="true"] {
+        pointer-events: none;
       }
     }
   }
@@ -434,8 +482,6 @@
       background-color: var(--background-color);
     }
   }
-
-  //!Radio
 
   // .ant-upload-list-item-undefined {
   //   .ant-upload-text-icon svg {
@@ -518,6 +564,36 @@
     font-size: 14px;
   }
 
+  .ant-form-item-has-error {
+    .ant-radio-group {
+      .ant-radio-button-wrapper {
+        border-color: var(--error-color) !important;
+      }
+    }
+
+    .ant-radio-wrapper {
+      border-color: var(--error-color) !important;
+
+      &:hover {
+        .ant-radio {
+          .ant-radio-inner {
+            border-color: var(--accent-color) !important;
+          }
+        }
+      }
+    }
+
+    .ant-checkbox-wrapper {
+      border-color: var(--error-color) !important;
+
+      &:hover {
+        .ant-checkbox-inner {
+          border-color: var(--accent-color) !important;
+        }
+      }
+    }
+  }
+
   @media (max-width: 1024px) {
     //!Input
 
@@ -594,6 +670,22 @@
       }
     }
 
+    //!Radio
+
+    .ant-radio-wrapper {
+      .ant-radio-inner {
+        width: 20px;
+        height: 20px;
+
+        &::after {
+          width: 8px;
+          height: 8px;
+          margin-block-start: -4px;
+          margin-inline-start: -4px;
+        }
+      }
+    }
+
     //!DateRange
 
     .ant-picker {
@@ -651,7 +743,7 @@
             max-width: 700px !important;
 
             .ant-modal-content {
-              padding: 60px;
+              padding: 60px 30px;
             }
           }
         }
@@ -755,6 +847,29 @@
       }
     }
 
+    //!Radio
+
+    .ant-radio-wrapper {
+      .ant-radio-inner {
+        width: 18px;
+        height: 18px;
+        border-width: 1px;
+
+        &::after {
+          width: 8px;
+          height: 8px;
+          margin-block-start: -4px;
+          margin-inline-start: -4px;
+        }
+      }
+
+      & span {
+        display: flex;
+        align-items: center;
+        height: 18px;
+      }
+    }
+
     //!DateRange
 
     .ant-picker {
@@ -807,7 +922,7 @@
             max-width: 500px !important;
 
             .ant-modal-content {
-              padding: 30px;
+              padding: 50px 20px;
             }
           }
         }

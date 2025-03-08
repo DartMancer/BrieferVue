@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { h, ref } from "vue";
-import ArrowBackIcon from "@/assets/icons/Arrows/ArrowBackIcon.vue";
 import { useRouter } from "vue-router";
+import ArrowBackIcon from "@/assets/icons/Arrows/ArrowBackIcon.vue";
 
 const router = useRouter();
 const click = ref<boolean>(false);

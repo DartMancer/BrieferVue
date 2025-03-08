@@ -6,9 +6,9 @@ import CarouselBlock from "./CarouselBlock.vue";
 
 const router = useRouter();
 
-function pushToBrieferPage() {
-  router.push("/briefer_page");
-}
+const routeTo = (path: string) => {
+  router.push(path);
+};
 </script>
 
 <template>
@@ -18,7 +18,7 @@ function pushToBrieferPage() {
         {{ $t.pages.companyInfo.pageTitle }}
       </h2>
     </div>
-    <button @click="pushToBrieferPage" class="product_button">
+    <button @click="routeTo('/briefer')" class="product_button">
       <slot />
       <a-flex class="product" justify="space-between">
         <ClickIcon class="product__click-icon" />

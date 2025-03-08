@@ -7,11 +7,8 @@ import {
   NumberOptions,
 } from "@/entities/form";
 import { numbersRules } from "@/features/Modals/BlockSettingsModal";
-import {
-  Checkbox,
-  Select,
-  NumbersRange,
-} from "@/widgets/Modals/BlockSettingsModal";
+import { NumbersRange } from "@/widgets/Modals/BlockSettingsModal";
+import { Checkbox, Select } from "@/widgets/Modals/ModalFields";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {
   required: true,

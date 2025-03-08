@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
-import { Textarea } from "@/widgets/Modals/BlockSettingsModal";
+import { Textarea } from "@/widgets/Modals/ModalFields";
 import AddOptionWrapper from "./AddOptionWrapper.vue";
 
 const textValue = defineModel<string | undefined>("textValue", {
@@ -17,7 +17,7 @@ defineProps<{
 const optionVisible = ref<boolean>(false);
 
 const toggleOption = (close?: boolean) => {
-  if (close) textValue.value = "";
+  if (close) textValue.value = undefined;
   optionVisible.value = !optionVisible.value;
 };
 

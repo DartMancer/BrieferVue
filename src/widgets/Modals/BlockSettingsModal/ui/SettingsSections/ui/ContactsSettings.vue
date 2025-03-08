@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { isContactsBlockSettings } from "@/shared/model";
 import { BlockConfiguration, ContactsBlockSettings } from "@/entities/form";
 import { contactsRules } from "@/features/Modals/BlockSettingsModal";
-import { NumberInput } from "@/widgets/Modals/BlockSettingsModal";
+import { NumberInput } from "@/widgets/Modals/ModalFields";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {
   required: true,

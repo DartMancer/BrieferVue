@@ -11,7 +11,7 @@ import { OptionType } from "@/shared/types";
 import DragVerticalIcon from "@/assets/icons/Other/DragVerticalIcon.vue";
 import TrashIcon from "@/assets/icons/Buttons/TrashIcon.vue";
 import { useFormStore } from "@/entities/form";
-import { Input } from "@/widgets/Modals/BlockSettingsModal";
+import { Input } from "@/widgets/Modals/ModalFields";
 
 const variables = defineModel<OptionType[]>("variables", { required: true });
 

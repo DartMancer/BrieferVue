@@ -7,10 +7,11 @@ const open = defineModel<boolean>("open", { required: true });
 const route = useRoute();
 const router = useRouter();
 
-const isActiveRoute = (routePath: string) => route.path === routePath;
-const navigateTo = (routePath: string) => {
-  router.push(routePath);
+const routeTo = (path: string) => {
+  router.push(path);
 };
+
+const isActiveRoute = (routePath: string) => route.path === routePath;
 
 const afterOpenChange = (bool: boolean) => {
   console.log("open", bool);
@@ -31,7 +32,7 @@ const afterOpenChange = (bool: boolean) => {
         :class="['header-item', { active: isActiveRoute(item.path) }]"
         :key="idx"
         align="center"
-        @click="navigateTo(item.path)"
+        @click="routeTo(item.path)"
       >
         <span class="title header-item__title">
           {{ item.title }}
@@ -58,12 +59,6 @@ const afterOpenChange = (bool: boolean) => {
     &.active {
       .header-item__title {
         color: var(--primary-color);
-      }
-    }
-
-    &:hover {
-      .header-item__title {
-        color: var(--hover-primary-color);
       }
     }
   }

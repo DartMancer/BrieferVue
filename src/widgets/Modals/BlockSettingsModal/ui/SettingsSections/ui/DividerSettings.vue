@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { BlockConfiguration, DividerBlockSettings } from "@/entities/form";
-import { isDividerBlockSettings } from "@/shared/model";
-import { Input } from "@/widgets/Modals/BlockSettingsModal";
 import { computed } from "vue";
+import { isDividerBlockSettings } from "@/shared/model";
+import { BlockConfiguration, DividerBlockSettings } from "@/entities/form";
+import { Input } from "@/widgets/Modals/ModalFields";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {
   required: true,

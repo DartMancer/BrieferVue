@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { isDateBlockSettings } from "@/shared/model";
 import { BlockConfiguration, DateBlockSettings } from "@/entities/form";
-import { Checkbox, DateRange } from "@/widgets/Modals/BlockSettingsModal";
+import { Checkbox, DateRange } from "@/widgets/Modals/ModalFields";
 import { dateRules } from "@/features/Modals/BlockSettingsModal";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {

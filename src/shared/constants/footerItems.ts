@@ -42,8 +42,8 @@ export const FOOTER_ITEMS = [
   {
     title: GlobalTexts.components.footer.documents,
     items: [
-      { title: GlobalTexts.components.footer.privacy, route: "/company_info" },
-      { title: GlobalTexts.components.footer.offer, route: "/company_info" },
+      { title: GlobalTexts.components.footer.privacy, route: "/privacy" },
+      { title: GlobalTexts.components.footer.offer, route: "/offer" },
     ],
   },
   {

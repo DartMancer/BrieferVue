@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, onMounted, watch } from "vue";
-import { NumberInput } from "@/widgets/Modals/BlockSettingsModal";
+import { NumberInput } from "@/widgets/Modals/ModalFields";
 import AddOptionWrapper from "./AddOptionWrapper.vue";
 
 const defaultValue = defineModel<number | undefined>("defaultValue", {

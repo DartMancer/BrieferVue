@@ -41,6 +41,7 @@ export const BLOCKS_LIST = ref<BlockConfiguration[]>([
     question: t.blocks.title.clearText,
     commentary: "",
     requiredField: DEFAULT_REQUIRED_FIELD,
+    isSpecial: true,
     settings: {},
   },
   {

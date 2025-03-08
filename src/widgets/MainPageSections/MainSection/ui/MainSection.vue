@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { GradientBackground, TextsCombined } from "@/shared/ui/Other";
 import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const routeTo = (path: string) => {
+  router.push(path);
+};
 </script>
 
 <template>
@@ -12,7 +19,7 @@ import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
           <TextsCombined :texts="TITLE_CHOOSE.content" />
         </span>
         <span class="subtitle">{{ $t.pages.main.main.chooseSubtitle }}</span>
-        <a-button class="button">
+        <a-button class="button" @click="routeTo('/form_templates')">
           <span class="button__text">
             {{ $t.components.buttons.main.chooseTemplate }}
           </span>
@@ -22,7 +29,7 @@ import { TITLE_CHOOSE, TITLE_CREATE } from "../model";
         <span class="block-title">
           <TextsCombined :texts="TITLE_CREATE.content" />
         </span>
-        <a-button class="button">
+        <a-button class="button" @click="routeTo('/form_designer')">
           <span class="button__text">
             {{ $t.components.buttons.main.createTemplate }}
           </span>

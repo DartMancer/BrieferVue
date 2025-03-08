@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import {
-  getValidationRules,
+  getSettingsValidationRules,
   isLinksBlockSettings,
   isNumberBlockSettings,
   isTextBlockSettings,
@@ -22,7 +22,7 @@ const numberSettings = computed(() => {
     : null;
 });
 
-const rules = getValidationRules(tempBlock.value.settings);
+const rules = getSettingsValidationRules(tempBlock.value.settings);
 </script>
 
 <template>

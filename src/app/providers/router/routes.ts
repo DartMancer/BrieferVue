@@ -42,13 +42,33 @@ export const routes: Array<RouteRecordRaw> = [
     component: () => import("@/pages/FormTemlates"),
   },
   {
-    path: "/briefer_page",
-    name: "briefer_page",
+    path: "/briefer",
+    name: "briefer",
     meta: {
-      titleKey: "briefer_page",
+      titleKey: "briefer",
       layout: "main",
       noauth: true,
     },
     component: () => import("@/pages/ProductsPages/BrieferPage"),
+  },
+  {
+    path: "/offer",
+    name: "offer",
+    meta: {
+      titleKey: "offer",
+      layout: "main",
+      noauth: true,
+    },
+    component: () => import("@/pages/Documents/OfferPage"),
+  },
+  {
+    path: "/privacy",
+    name: "privacy",
+    meta: {
+      titleKey: "privacy",
+      layout: "main",
+      noauth: true,
+    },
+    component: () => import("@/pages/Documents/PrivacyPage"),
   },
 ];

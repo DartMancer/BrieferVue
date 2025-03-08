@@ -19,7 +19,10 @@ export const TextsButtons = {
   },
 
   common: {
+    yes: "Да",
+    no: "Нет",
     save: "Сохранить",
+    send: "Отправить",
     back: "Назад",
     cancel: "Отмена",
     delete: "Удалить",

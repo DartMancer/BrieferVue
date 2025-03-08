@@ -1,51 +1,30 @@
 import { ref } from "vue";
-import { defineStore } from "pinia";
-import { BlockConfiguration, FormFieldState } from "@/entities/form";
+import { defineStore, storeToRefs } from "pinia";
+import { FieldBlockBase, useFormStore } from "@/entities/form";
 
 export const usePreviewStore = defineStore("formStore", () => {
-  const formFields = ref<FormFieldState[]>([]);
+  const { formBlocks } = storeToRefs(useFormStore());
 
-  function initialize(blocks: BlockConfiguration[]) {
-    clearReviewForm();
-    for (let i = 0; i < blocks.length; i++) {
-      // const id = blocks[i].id;
-      // const icon = blocks[i].generalSettings.icon;
-      // const value = null;
-      // const newField = <FormFieldState>{ id, icon, value };
-      // addField(newField);
-    }
-  }
+  const formFields = ref<FieldBlockBase[]>([]);
+  const formModel = ref<Record<string, FieldBlockBase>>({});
 
-  // function addField(field: FormFieldState) {
-  //   formFields.value.push(field);
-  // }
+  const initialize = () => {
+    formFields.value = formBlocks.value.map(
+      ({ icon, blockTitle, supportText, ...rest }) => ({
+        ...rest,
+        value:
+          (rest.settings as { defaultValue?: unknown })?.defaultValue || null,
+      })
+    );
 
-  function clearReviewForm() {
-    formFields.value = [];
-  }
+    formModel.value = Object.fromEntries(
+      formFields.value.map((field) => [field.id, field])
+    );
+  };
 
   return {
     formFields,
+    formModel,
     initialize,
-    clearReviewForm,
   };
 });
-
-// import { defineStore } from 'pinia';
-// import { ref } from 'vue';
-// import { BlockSettings } from '@/shared/models/BlockSettings';
-
-// export const useFormBlocksStore = defineStore('formPreview', () => {
-//     const reviewForm = ref<BlockSettings[] | null>([]);
-//     const validationErrors = ref<{ [key: string]: string | null }>({});
-
-//     const clearReviewForm = () => {
-//         reviewForm.value = null;
-//     };
-
-//     return {
-//         reviewForm,
-//         validationErrors,
-//         clearReviewForm,
-//     };
-// });

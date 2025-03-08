@@ -29,10 +29,12 @@ defineProps<{
     font-size: 25px;
   }
 
-  &:hover {
-    border-color: var(--primary-color);
-    background-color: var(--primary-color);
-    box-shadow: 0 0 20px var(--hover-primary-color);
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
+      box-shadow: 0 0 20px var(--hover-primary-color);
+    }
   }
 
   &:active {

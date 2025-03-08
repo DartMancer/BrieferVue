@@ -3,11 +3,8 @@ import { computed } from "vue";
 
 import { getModalSections } from "@/shared/utils";
 import { BlockConfiguration } from "@/entities/form";
-import {
-  AddButtons,
-  BlockTitle,
-  Input,
-} from "@/widgets/Modals/BlockSettingsModal";
+import { AddButtons, BlockTitle } from "@/widgets/Modals/BlockSettingsModal";
+import { Input } from "@/widgets/Modals/ModalFields";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {
   required: true,

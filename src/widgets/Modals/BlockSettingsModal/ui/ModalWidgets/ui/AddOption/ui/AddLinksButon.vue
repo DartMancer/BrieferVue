@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed } from "vue";
-import { Input } from "@/widgets/Modals/BlockSettingsModal";
+import { Input } from "@/widgets/Modals/ModalFields";
 import AddOptionWrapper from "./AddOptionWrapper.vue";
 import { formatOptions } from "@/shared/utils";
 

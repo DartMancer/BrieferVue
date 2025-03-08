@@ -23,8 +23,7 @@ const emit = defineEmits<{
 
 const loading = ref<boolean>(false);
 
-const onFinish = (value: any) => {
-  console.log("Error:", value);
+const onFinish = () => {
   if (!tempBlock.value) return;
   loading.value = true;
 
@@ -56,7 +55,6 @@ const closeModal = () => {
     destroyOnClose
     centered
   >
-    <!-- :width="modalWidth" -->
     <a-form
       v-if="tempBlock"
       class="settings-form"

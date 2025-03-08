@@ -8,16 +8,17 @@ import LogoIcon from "@/assets/icons/Other/LogoIcon.vue";
 const route = useRoute();
 const router = useRouter();
 
-const isActiveRoute = (routePath: string) => route.path === routePath;
-const navigateTo = (routePath: string) => {
-  router.push(routePath);
-};
-
 const isScrolled = ref<boolean>(false);
+
+const isActiveRoute = (routePath: string) => route.path === routePath;
 
 const handleScroll = () => {
   const scrollThreshold = 75;
   isScrolled.value = window.scrollY > scrollThreshold;
+};
+
+const routeTo = (path: string) => {
+  router.push(path);
 };
 
 onMounted(() => {
@@ -48,7 +49,7 @@ onUnmounted(() => {
         :class="['header-item', { active: isActiveRoute(item.path) }]"
         :key="idx"
         align="center"
-        @click="navigateTo(item.path)"
+        @click="routeTo(item.path)"
       >
         <span class="title header-item__title">
           {{ item.title }}

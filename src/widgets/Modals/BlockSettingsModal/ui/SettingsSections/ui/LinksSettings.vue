@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { isLinksBlockSettings } from "@/shared/model";
 import { BlockConfiguration, LinksBlockSettings } from "@/entities/form";
 import { linksRules } from "@/features/Modals/BlockSettingsModal";
-import { NumberInput } from "@/widgets/Modals/BlockSettingsModal";
+import { NumberInput } from "@/widgets/Modals/ModalFields";
 
 const tempBlock = defineModel<BlockConfiguration>("tempBlock", {
   required: true,

@@ -77,26 +77,22 @@
 
 /*// ? list */
 
-.list-container {
-  position: relative;
-  transition: max-height 0.3s, min-height 0.3s;
-}
-
 .list-move,
 .list-enter-active,
 .list-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: scale(0.01);
+  transform: scale(0.95);
 }
 
-.list-leave-active {
-  position: absolute;
-  width: 100%;
+.list-enter-to,
+.list-leave-from {
+  opacity: 0;
+  transform: scale(0.01);
 }
 
 /*// ? rotate-icon */

@@ -14,6 +14,8 @@ export const TextsPlaceholders = {
   linksSubtitle: "Укажите максимальное количество ссылок",
   fileSizeSubtitle: "Максимальный размер всех файлов, МБ",
   fileCountSubtitle: "Максимальное количество файлов",
+  linkUrlLabel: "Укажите ссылку",
+  linkDescriptionLabel: "Вы можете дать описание этой ссылки",
   variable: "Вариант",
   enterText: "Введите текст",
   enterQuestion: "Введите вопрос",

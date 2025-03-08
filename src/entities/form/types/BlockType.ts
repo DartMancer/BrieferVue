@@ -22,12 +22,6 @@ export interface NumbersRangeType {
   maxNumber: number;
 }
 
-// export type RadioLooks = "Плитка" | "В один ряд";
-
-// export type DividerLooks = "Текстовый" | "Линия";
-
-// export type NumberOptions = "Целое" | "Дробное" | "Промежуток";
-
 export type RadioLooks = "TILE" | "ONE_ROW";
 
 export type DividerLooks = "TEXT" | "LINE";

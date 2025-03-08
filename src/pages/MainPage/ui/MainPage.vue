@@ -6,6 +6,13 @@ import {
   CostSection,
   FormButton,
 } from "@/widgets/MainPageSections";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const routeTo = (path: string) => {
+  router.push(path);
+};
 </script>
 
 <template>
@@ -22,7 +29,10 @@ import {
       </a-flex>
       <a-flex class="advantage-section" align="center" vertical>
         <AdvantageSection />
-        <FormButton :btnText="$t.components.buttons.main.tryNow" />
+        <FormButton
+          :btnText="$t.components.buttons.main.tryNow"
+          @click="routeTo('/form_templates')"
+        />
         <a-divider />
       </a-flex>
       <a-flex class="cost-section" vertical>
